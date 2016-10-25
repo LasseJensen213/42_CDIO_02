@@ -189,6 +189,7 @@ public class Test {
 						}
 						case 3 : {
 							Expected = Elf0[r];
+							break;
 						}
 						case 4 : {
 							Expected = Thief0[r];
@@ -212,6 +213,7 @@ public class Test {
 						}
 						case 3 : {
 							Expected = Elf1[r];
+							break;
 						}
 						case 4 : {
 							Expected = Thief1[r];
