@@ -142,8 +142,8 @@ public class StringBank {
 			+ "You discovered that they once belonged to an elven clan. "
 			+ "You sold some of their old equipment for 60 coins.";
 	
-	private static String strWarriorWerewall0;
-	private static String strWarriorWerewall1;
+	private static String strWarriorWerewall0 = "";
+	private static String strWarriorWerewall1 = "";
 	
 	private static String strWarriorPit0 ="You ware fighting undead entities at THE PIT. The undead entities "
 			+ "destroyed some of your armor. It costed you 50 coins to repair it.";
@@ -211,8 +211,8 @@ public class StringBank {
 	private static String strDwarfHuts1 ="While traveling in some mountains, you came across some worn huts. "
 			+ "While searching them, you found a special longbow. You sold it for 60 coins.";
 	
-	private static String strDwarfWerewall0;
-	private static String strDwarfWerewall1;
+	private static String strDwarfWerewall0 = "";
+	private static String strDwarfWerewall1 = "";
 	
 	private static String strDwarfPit0 ="1.	You were mining in a pit. Sadly, a monster ate your pickaxe. "
 			+ "It costed you 50 coins to buy a new one. ";
@@ -284,8 +284,8 @@ public class StringBank {
 	private static String strElfHuts1 ="You came across some huts in the mountains. As a tribute to your "
 			+ "race the inhabitants gave you 60 coins.";
 	
-	private static String strElfWerewall0;
-	private static String strElfWerewall1;
+	private static String strElfWerewall0 = "";
+	private static String strElfWerewall1 = "";
 	
 	private static String strElfPit0 ="You fell into a pit, while exploring a cave. You have to leave 50 coins "
 			+ "behind, so you could you up.";
@@ -357,8 +357,8 @@ public class StringBank {
 	private static String strThiefHuts1 ="You found some huts in the mountains inhabited by savages. You "
 			+ "killed them all and looted their huts. You earned 60 coins.";
 	
-	private static String strThiefWerewall0;
-	private static String strThiefWerewall1;
+	private static String strThiefWerewall0 = "";
+	private static String strThiefWerewall1 = "";
 	
 	private static String strThiefPit0 ="You were arrested and thrown into a pit. You had to bribe the guard "
 			+ "with 50 coins to escape.";
@@ -377,7 +377,7 @@ public class StringBank {
 		{{{strWizardTower0,strWizardTower1},{strWarriorTower0,strWarriorTower1},{strDwarfTower0,strDwarfTower1},{strElfTower0,strElfTower1},{strThiefTower0,strThiefTower1}
 		},{{strWizardCrater0,strWizardCrater1},{strWarriorCrater0,strWarriorCrater1},{strDwarfCrater0,strDwarfCrater1},{strElfCrater0,strElfCrater1},{strThiefCrater0,strThiefCrater1}
 		},{{strWizardPalaceGates0,strWizardPalaceGates1},{strWarriorPalaceGates0,strWarriorPalaceGates1},{strDwarfPalaceGates0,strDwarfPalaceGates1},{strElfPalaceGates0,strElfPalaceGates1},{strThiefPalaceGates0,strThiefPalaceGates1}
-		},{{strWizardColdDesert0,strWizardColdDesert1},{strWarriorColdDesert0,strWarriorColdDesert1},{strDwarfColdDesert0,strDwarfColdDesert0,strDwarfColdDesert1},{strElfColdDesert0,strElfColdDesert1},{strThiefColdDesert0,strThiefColdDesert1}
+		},{{strWizardColdDesert0,strWizardColdDesert1},{strWarriorColdDesert0,strWarriorColdDesert1},{strDwarfColdDesert0,strDwarfColdDesert1},{strElfColdDesert0,strElfColdDesert1},{strThiefColdDesert0,strThiefColdDesert1}
 		},{{strWizardWalledCity0,strWizardWalledCity1},{strWarriorWalledCity0,strWarriorWalledCity1},{strDwarfWalledCity0,strDwarfWalledCity1},{strElfWalledCity0,strElfWalledCity1},{strThiefWalledCity0,strThiefWalledCity1}
 		},{{strWizardMonastary0,strWizardMonastary1},{strWarriorMonastary0,strWarriorMonastary1},{strDwarfMonastary0,strDwarfMonastary1},{strElfMonastary0,strElfMonastary1},{strThiefMonastary0,strThiefMonastary1}
 		},{{strWizardBlackCave0,strWizardBlackCave1},{strWarriorBlackCave0,strWarriorBlackCave1},{strDwarfBlackCave0,strDwarfBlackCave1},{strElfBlackCave0,strElfBlackCave1},{strThiefBlackCave0,strThiefBlackCave1}

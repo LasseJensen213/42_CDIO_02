@@ -23,177 +23,214 @@ public class Test {
 	public void Stringstest() {
 		int equal = 0;
 		//String
-		String Wizard[] = {
+		String Wizard0[] = {
 				StringBank.getStrWizardTower0(),
-				StringBank.getStrWizardTower1(),
-				StringBank.getStrWizardPit0(),
-				StringBank.getStrWizardPit1(),
+				StringBank.getStrWizardCrater0(),
 				StringBank.getStrWizardPalaceGates0(),
-				StringBank.getStrWizardPalaceGates1(),
 				StringBank.getStrWizardColdDesert0(),
-				StringBank.getStrWizardColdDesert1(),
 				StringBank.getStrWizardWalledCity0(),
-				StringBank.getStrWizardWalledCity1(),
 				StringBank.getStrWizardMonastary0(),
-				StringBank.getStrWizardMonastary1(),
 				StringBank.getStrWizardBlackCave0(),
-				StringBank.getStrWizardBlackCave1(),
 				StringBank.getStrWizardHuts0(),
-				StringBank.getStrWizardHuts1(),
 				StringBank.getStrWizardWerewall0(),
-				StringBank.getStrWizardWerewall1(),
 				StringBank.getStrWizardPit0(),
-				StringBank.getStrWizardPit1(),
 				StringBank.getStrWizardGoldmine0(),
-				StringBank.getStrWizardGoldmine1(),	
+
 		};
-		String Warrior[] = {
+		String Wizard1[] = {
+				StringBank.getStrWizardTower1(),
+				StringBank.getStrWizardCrater1(),
+				StringBank.getStrWizardPalaceGates1(),
+				StringBank.getStrWizardColdDesert1(),
+				StringBank.getStrWizardWalledCity1(),
+				StringBank.getStrWizardMonastary1(),
+				StringBank.getStrWizardBlackCave1(),
+				StringBank.getStrWizardHuts1(),
+				StringBank.getStrWizardWerewall1(),
+				StringBank.getStrWizardPit1(),
+				StringBank.getStrWizardGoldmine1(),				
+		};
+
+		String Warrior0[] = {
 				StringBank.getStrWarriorTower0(),
-				StringBank.getStrWarriorTower1(),
-				StringBank.getStrWarriorPit0(),
-				StringBank.getStrWarriorPit1(),
+				StringBank.getStrWarriorCrater0(),
 				StringBank.getStrWarriorPalaceGates0(),
-				StringBank.getStrWarriorPalaceGates1(),
 				StringBank.getStrWarriorColdDesert0(),
-				StringBank.getStrWarriorColdDesert1(),
 				StringBank.getStrWarriorWalledCity0(),
-				StringBank.getStrWarriorWalledCity1(),
 				StringBank.getStrWarriorMonastary0(),
-				StringBank.getStrWarriorMonastary1(),
 				StringBank.getStrWarriorBlackCave0(),
-				StringBank.getStrWarriorBlackCave1(),
 				StringBank.getStrWarriorHuts0(),
-				StringBank.getStrWarriorHuts1(),
 				StringBank.getStrWarriorWerewall0(),
-				StringBank.getStrWarriorWerewall1(),
 				StringBank.getStrWarriorPit0(),
-				StringBank.getStrWarriorPit1(),
 				StringBank.getStrWarriorGoldmine0(),
-				StringBank.getStrWarriorGoldmine1(),	
+
 		};	
-
-
-		String Dwarf[] = {
+		String Warrior1[] = {
+				StringBank.getStrWarriorTower1(),
+				StringBank.getStrWarriorCrater1(),
+				StringBank.getStrWarriorPalaceGates1(),
+				StringBank.getStrWarriorColdDesert1(),
+				StringBank.getStrWarriorWalledCity1(),
+				StringBank.getStrWarriorMonastary1(),
+				StringBank.getStrWarriorBlackCave1(),
+				StringBank.getStrWarriorHuts1(),
+				StringBank.getStrWarriorWerewall1(),
+				StringBank.getStrWarriorPit1(),
+				StringBank.getStrWarriorGoldmine1(),
+		};
+		String Dwarf0[] = {
 				StringBank.getStrDwarfTower0(),
-				StringBank.getStrDwarfTower1(),
-				StringBank.getStrDwarfPit0(),
-				StringBank.getStrDwarfPit1(),
+				StringBank.getStrDwarfCrater0(),
 				StringBank.getStrDwarfPalaceGates0(),
-				StringBank.getStrDwarfPalaceGates1(),
 				StringBank.getStrDwarfColdDesert0(),
-				StringBank.getStrDwarfColdDesert1(),
 				StringBank.getStrDwarfWalledCity0(),
-				StringBank.getStrDwarfWalledCity1(),
 				StringBank.getStrDwarfMonastary0(),
-				StringBank.getStrDwarfMonastary1(),
 				StringBank.getStrDwarfBlackCave0(),
-				StringBank.getStrDwarfBlackCave1(),
 				StringBank.getStrDwarfHuts0(),
-				StringBank.getStrDwarfHuts1(),
 				StringBank.getStrDwarfWerewall0(),
-				StringBank.getStrDwarfWerewall1(),
 				StringBank.getStrDwarfPit0(),
-				StringBank.getStrDwarfPit1(),
 				StringBank.getStrDwarfGoldmine0(),
+		};
+
+		String Dwarf1[] = {
+				StringBank.getStrDwarfTower1(),
+				StringBank.getStrDwarfCrater1(),
+				StringBank.getStrDwarfPalaceGates1(),
+				StringBank.getStrDwarfColdDesert1(),
+				StringBank.getStrDwarfWalledCity1(),
+				StringBank.getStrDwarfMonastary1(),
+				StringBank.getStrDwarfBlackCave1(),
+				StringBank.getStrDwarfHuts1(),
+				StringBank.getStrDwarfWerewall1(),
+				StringBank.getStrDwarfPit1(),
 				StringBank.getStrDwarfGoldmine1(),	
 		};
-		String Elf[] = {
+		String Elf0[] = {
 				StringBank.getStrElfTower0(),
-				StringBank.getStrElfTower1(),
-				StringBank.getStrElfPit0(),
-				StringBank.getStrElfPit1(),
+				StringBank.getStrElfCrater0(),
 				StringBank.getStrElfPalaceGates0(),
-				StringBank.getStrElfPalaceGates1(),
 				StringBank.getStrElfColdDesert0(),
-				StringBank.getStrElfColdDesert1(),
 				StringBank.getStrElfWalledCity0(),
-				StringBank.getStrElfWalledCity1(),
 				StringBank.getStrElfMonastary0(),
-				StringBank.getStrElfMonastary1(),
 				StringBank.getStrElfBlackCave0(),
-				StringBank.getStrElfBlackCave1(),
 				StringBank.getStrElfHuts0(),
-				StringBank.getStrElfHuts1(),
 				StringBank.getStrElfWerewall0(),
-				StringBank.getStrElfWerewall1(),
 				StringBank.getStrElfPit0(),
-				StringBank.getStrElfPit1(),
 				StringBank.getStrElfGoldmine0(),
-				StringBank.getStrElfGoldmine1(),	
-		};
-		String Theif[] = {
+
+		};		
+		String Elf1[] = {
+				StringBank.getStrElfTower1(),
+				StringBank.getStrElfCrater1(),
+				StringBank.getStrElfPalaceGates1(),
+				StringBank.getStrElfColdDesert1(),
+				StringBank.getStrElfWalledCity1(),
+				StringBank.getStrElfMonastary1(),
+				StringBank.getStrElfBlackCave1(),
+				StringBank.getStrElfHuts1(),
+				StringBank.getStrElfWerewall1(),
+				StringBank.getStrElfPit1(),
+				StringBank.getStrElfGoldmine1(),
+		};		
+
+
+
+		String Thief0[] = {
 				StringBank.getStrThiefTower0(),
-				StringBank.getStrThiefTower1(),
-				StringBank.getStrThiefPit0(),
-				StringBank.getStrThiefPit1(),
+				StringBank.getStrThiefCrater0(),
 				StringBank.getStrThiefPalaceGates0(),
-				StringBank.getStrThiefPalaceGates1(),
 				StringBank.getStrThiefColdDesert0(),
-				StringBank.getStrThiefColdDesert1(),
 				StringBank.getStrThiefWalledCity0(),
-				StringBank.getStrThiefWalledCity1(),
 				StringBank.getStrThiefMonastary0(),
-				StringBank.getStrThiefMonastary1(),
 				StringBank.getStrThiefBlackCave0(),
-				StringBank.getStrThiefBlackCave1(),
 				StringBank.getStrThiefHuts0(),
-				StringBank.getStrThiefHuts1(),
 				StringBank.getStrThiefWerewall0(),
-				StringBank.getStrThiefWerewall1(),
 				StringBank.getStrThiefPit0(),
-				StringBank.getStrThiefPit1(),
-				StringBank.getStrThiefGoldmine0(),
-				StringBank.getStrThiefGoldmine1(),	
-			
+				StringBank.getStrThiefGoldmine0()	
 		};
-		
+
+		String Thief1[] = {
+				StringBank.getStrThiefTower1(),	
+				StringBank.getStrThiefCrater1(),
+				StringBank.getStrThiefPalaceGates1(),
+				StringBank.getStrThiefColdDesert1(),
+				StringBank.getStrThiefWalledCity1(),
+				StringBank.getStrThiefMonastary1(),
+				StringBank.getStrThiefBlackCave1(),
+				StringBank.getStrThiefHuts1(),
+				StringBank.getStrThiefWerewall1(),
+				StringBank.getStrThiefPit1(),
+				StringBank.getStrThiefGoldmine1(),
+		};
+
+
+
 		String Expected = "";
 		String Actual = "";
-		for (int u = 0;u<1;u++)
-			StringBank.setrandomvalue(u);
-		
 		// i is equal to the character number
-			for (int i = 0;i<5;i++) {
-		// r is equal to the field number		
-				for (int r = 0; r<11;r++) {
-					switch (i) {
-					case 0 : {
-						Expected = Wizard[r];
-						break;
+		for (int i = 0;i<5;i++) {
+			// r is equal to the field number		
+			for (int r = 0; r<11;r++) {
+				for (int u = 0;u<2;u++) {				
+					StringBank.setrandomvalue(u);
+					if(u==0) {
+						switch (i) {
+						case 0 : {
+							Expected = Wizard0[r];
+							break;
+						}
+						case 1 : {
+							Expected = Warrior0[r];
+							break;
+						}
+						case 2 : {
+							Expected = Dwarf0[r];
+							break;
+						}
+						case 3 : {
+							Expected = Elf0[r];
+						}
+						case 4 : {
+							Expected = Thief0[r];
+							break;
+						}
+						}
 					}
-					case 1 : {
-						Expected = Warrior[r];
-						break;
+					else if (u==1) {
+						switch (i) {
+						case 0 : {
+							Expected = Wizard1[r];
+							break;
+						}
+						case 1 : {
+							Expected = Warrior1[r];
+							break;
+						}
+						case 2 : {
+							Expected = Dwarf1[r];
+							break;
+						}
+						case 3 : {
+							Expected = Elf1[r];
+						}
+						case 4 : {
+							Expected = Thief1[r];
+							break;
+						}
+						}
 					}
-					case 2 : {
-						Expected = Dwarf[r];
-						break;
-					}
-					case 3 : {
-						Expected = Elf[r];
-					}
-					case 4 : {
-						Expected = Theif[r];
-						break;
-					}
-					}
-				Actual = StringBank.getBoardMessage(r, i);
 
+					Actual = StringBank.getBoardMessage(r, i);
 					if (Expected == Actual)  {
 						equal++;
-
 					}
-
-					}
-
+				}
 			}
-			assertEquals(110,equal);
+			
+		}
+		assertEquals(110,equal);
 	}
-
-
-	//	public static String getBoardMessage(int fieldNumber, int characterNumber)
-	//	{
-	//		Random rand = new Random();
-	//		return BoardMessages[fieldNumber][characterNumber][rand.nextInt(2)];
-	//	}
 }
+
+
+
