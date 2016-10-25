@@ -6,7 +6,7 @@ public class Game {
 
 
 	private Player[] playerArr;
-	private int numOfPlayers = 2;
+	private int numOfPlayers = 4;
 	private int numOfDice = 2;
 	private int numOfDiceSides = 6;
 	private int playerNum = 1;
@@ -44,7 +44,9 @@ public class Game {
 					else
 					{
 						playerArr[i]=new Player(input,charNum);
+						nameArr[i]=input;
 						playerNum++;
+						break;
 					}
 				}
 				else
@@ -56,7 +58,9 @@ public class Game {
 					else
 					{
 						playerArr[i]=new Player(input,charNum);
+						nameArr[i]=input;
 						playerNum++;
+						break;
 					}
 				}
 			}
@@ -90,6 +94,7 @@ public class Game {
 		{
 			System.out.println("CHOOSE_BETWEEN_THESE_STRINGBANK");
 			input = keyb.nextLine();
+			input = input.toLowerCase();
 			if(input.equals(StringBank.getCharacterName(0)))
 			{
 				return 0;
