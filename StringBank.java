@@ -21,92 +21,97 @@ public class StringBank {
 	
 	///Board Messages
 	///for Wizard
-	private static String strWizardTower0 ="You have arrived at a colleague’s home, "
-			+ "as a present he gave you 250 coins.";
+	private static String strWizardTower0 ="You arrive at a colleague’s home, "
+			+ "as a present he gives you 250 coins.";
 	
-	private static String strWizardTower1 ="You arrived at an abandoned tower of "
-			+ "a former friend. You found 250 coins in the treasure room.";
+	private static String strWizardTower1 ="You arrive at an abandoned tower of "
+			+ "a former friend. You find 250 coins in the treasure room.";
 	
-	private static String strWizardCrater0 ="Due to your clumsiness you fell into a crater. On your "
-			+ "way down you ripped a hole in your money pouch. You lost 100 coins.";
+	private static String strWizardCrater0 ="Due to your clumsiness you fall into a crater. On your "
+			+ "way down you rip a hole in your money pouch. You lose 100 coins.";
 	
-	private static String strWizardCrater1 ="On your conquest for coins, you entered a cursed "
-			+ "crater, in where a thief guild was. They robbed you of 100 coins.";
+	private static String strWizardCrater1 ="On your conquest for coins, you enter a cursed "
+			+ "crater inhabited by thieves. They rob you of 100 coins.";
 	
-	private static String strWizardPalaceGates0 ="You arrived at the palace gates to a great city. As a tribute to "
-			+ "your magnificent status as a magician, they gave you 100 coins.";
+	private static String strWizardPalaceGates0 ="You arrive at the palace gates of a great city. As a tribute to "
+			+ "your magnificent status as a magician, they give you 100 coins.";
 	
-	private static String strWizardPalaceGates1 ="You reinforced the palace gates with your magic. For your "
-			+ "troubles, the city major paid you 100 coins.";
+	private static String strWizardPalaceGates1 ="You reinforce the palace gates with your magic. For your "
+			+ "troubles, the city major give you 100 coins.";
 	
-	private static String strWizardColdDesert0 ="While traveling through a cold desert, a sneaky fox ate "
-			+ "all of your food. Luckily you met a caravan, from which, "
-			+ "you could by new supplies. The supplies were overpriced sadly. You paid 20 coins.";
+	private static String strWizardColdDesert0 ="While traveling through a cold desert, a sneaky fox eats "
+			+ "all of your food. Luckily you meet a caravan, from which, "
+			+ "you buy new supplies. You lose 20 coins.";
 	
-	private static String strWizardColdDesert1 ="You performed a ritual in the middle of a cold desert. "
-			+ "Sadly, it went wrong and ruined your remaining ingredients. New ones "
+	private static String strWizardColdDesert1 ="You perform a ritual in the middle of a cold desert. "
+			+ "It goes wrong and ruins your remaining ingredients. New ingredients "
 			+ "cost you 20 coins.";
 	
-	private static String strWizardWalledCity0 ="At a walled city you spotted a dwarf repairing the wall. "
-			+ "You decided to help him by using your magic to gather supplies faster. "
-			+ "As a reward the city constructer gave you both 180 coins.";
+	private static String strWizardWalledCity0 ="At a walled city you spot a dwarf repairing the wall. "
+			+ "You decide to help him by using your magic to gather supplies faster. "
+			+ "As a reward the city constructer gives you 180 coins.";
 	
-	private static String strWizardWalledCity1 ="At a walled city, you discovered that the inhabitants where "
+	private static String strWizardWalledCity1 ="At a walled city, you discover that the inhabitants are "
 			+ "conducting sacrifices using young virgins. You decided to annihilate "
 			+ "the evildoers. As a token of their everlasting gratitude, "
-			+ "the young virgins gave you 180 coins.";
+			+ "the young virgins give you 180 coins.";
 	
-	private static String strWizardMonastary0 ="You arrived at a monastery and decided to rest up "
+	private static String strWizardMonastary0 ="You arrive at a monastery and decide to rest up "
 			+ "and feel the ambient atmosphere.";
 	
-	private static String strWizardMonastary1 ="You arrived at a monastery inhabited by worshippers of "
+	private static String strWizardMonastary1 ="You arrive at a monastery inhabited by worshippers of "
 			+ "the dwarf hero “Thorin Ravenbeard”. They let you rest up.";
 	
-	private static String strWizardBlackCave0 ="In a black cave, you used all of your materials "
-			+ "to light up the cave. New ones cost you 70 coins.";
+	private static String strWizardBlackCave0 ="In a black cave, you use all of your materials "
+			+ "to light up the cave. New materials cost you 70 coins.";
 	
-	private static String strWizardBlackCave1 ="You arrived at the entrance of a black cave and were "
-			+ "ambushed by some monsters. You dropped 70 coins while fleeing.";
+	private static String strWizardBlackCave1 ="You arrive at the entrance of a black cave and are "
+			+ "ambushed by monsters. You drop 70 coins while fleeing.";
 	
-	private static String strWizardHuts0 ="You found some huts in the mountains. Since the inhabitants "
-			+ "never interact with strangers, you were seen as a god. They gave you 60 coins.";
+	private static String strWizardHuts0 ="You find some huts in the mountains. Since the inhabitants "
+			+ "never interacted with strangers before, they see you as a god. They gave you 60 coins.";
 	
-	private static String strWizardHuts1 ="You found some huts in the mountains. "
-			+ "In a corner of one of them you found 60 coins.";
+	private static String strWizardHuts1 ="You find some huts in the mountains. "
+			+ "In a corner of one of them you find 60 coins.";
 	
-	private static String strWizardWerewall0 = "";
-	private static String strWizardWerewall1 = "";
+	private static String strWizardWerewall0 = "You arrive at a werewall, a shrine for werewolves. "
+			+ "You leave some coins, but are blessed with unnatural swiftness. Lose 80 coins and gain an extra turn.";
 	
-	private static String strWizardPit0 ="You fell into THE PIT and couldn’t get out. A random stranger "
-			+ "charged you 50 coins, for helping you out.";
+	private static String strWizardWerewall1 = "You pass a werewall and are ambushed by werewolves. "
+			+ "In your haste you drop some coins, but the burst of adrenalin ensures you get away. "
+			+ "Lose 80 coins and gain an extra turn.";
 	
-	private static String strWizardPit1 ="You were killing undead entities at the pit. Sadly, you didn’t "
-			+ "discover, that some ghost had stolen some of your coins. You lost 50 coins.";
+	private static String strWizardPit0 ="You fall into THE PIT and cannot get out. A random stranger "
+			+ "charge you 50 coins for helping you out.";
 	
-	private static String strWizardGoldmine0 ="You discovered a lead lode and used your alchemy skills to turn "
-			+ "it into gold. You earned 650 coins.";
+	private static String strWizardPit1 ="You are killing undeads at the pit. Sadly, you don’t "
+			+ "notice that a ghost steal some of your coins. You lose 50 coins.";
+	
+	private static String strWizardGoldmine0 ="You discover a lead lode and use your alchemy skills to turn "
+			+ "it into gold. You earn 650 coins.";
 	
 	private static String strWizardGoldmine1 ="You finally have enough materials to generate gold from thin air. "
-			+ "You sold your gold for 650 coins";
+			+ "You sell your gold for 650 coins";
 
 	///For Warrior
 
-	private static String strWarriorTower0 ="You arrived at the evil wizards tower and "
-			+ "defeated the wizard who was wreaking havoc. You looted his treasure room for 250 coins.";
+	private static String strWarriorTower0 ="You arrive at the evil wizards tower and "
+			+ "defeat the wizard who is wreaking havoc. You loot his treasure room for 250 coins.";
 	
-	private static String strWarriorTower1 ="You arrived at the ruins of a tower. "
-			+ "Out of good luck, you found a treasure chest which contained 250 coins.";
+	private static String strWarriorTower1 ="You arrive at the ruins of a tower. "
+			+ "Out of good luck, you find a treasure chest which contains 250 coins.";
 	
-	private static String strWarriorCrater0 ="On your mission to kill undead entities, you "
-			+ "arrived at a crater inhabited by the undead. You managed "
-			+ "to kill 50 undead entities. But sadly the repair of the your "
-			+ "armor was much more expensive that you thought. You lost 100 coins.";
+	private static String strWarriorCrater0 ="On your mission you arrived at a crater inhabited by the undead. "
+			+ "You manage to kill 50 undeads. But sadly the repair cost of the your "
+			+ "armor was much more expensive that you thought. You lose 100 coins.";
 	
-	private static String strWarriorCrater1 ="On your way through a crater your loyal pet inhaled "
-			+ "poisonous gas. The elves healed your pet for 100 coins.";
+	private static String strWarriorCrater1 ="On your way through a crater your loyal pet inhales "
+			+ "poisonous gas. The elves heals your pet for the cost of 100 coins.";
 	
-	private static String strWarriorPalaceGates0 ="You defended the palace gates from an invasion "
-			+ "of undead entities. As a reward from the gate master you earned 100 coins.";
+	private static String strWarriorPalaceGates0 ="You defend the palace gates from an invasion "
+			+ "of undeads. As a reward from the gate master you earn 100 coins.";
+	
+	//whoop-ti-doo
 	
 	private static String strWarriorPalaceGates1 ="You arrived at the palace gates to a great city. "
 			+ "When the crowd entering the palace gates saw your exotic pet, "
