@@ -7,7 +7,6 @@ public class StringBank {
 	///Menu info
 	private static String menuInfo = "\"start\": starts the game, \"end\": ends game";
 	private static String invalidInput = "Invalid input";
-	private static String startCommand = "start";
 
 	///Character ( "role" ) Names
 	private static String wizard = "wizard";
@@ -391,7 +390,7 @@ public class StringBank {
 	private static String[] characterNames = {wizard,warrior,dwarf,elf,thief};
 	
 	///String array for menu commands
-	private static String[] menu = {menuInfo,invalidInput,startCommand};
+	private static String[] menu = {menuInfo,invalidInput};
 
 
 	/***
