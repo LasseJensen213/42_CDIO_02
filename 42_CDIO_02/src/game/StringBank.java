@@ -430,7 +430,6 @@ public class StringBank {
 	
 	public static String getBoardMessage(int fieldNumber, int characterNumber)
 	{
-		randomizer();
 		return BoardMessages[fieldNumber][characterNumber][randomvalue];
 	}
 	
