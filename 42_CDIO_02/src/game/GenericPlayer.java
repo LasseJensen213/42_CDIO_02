@@ -23,6 +23,9 @@ public class GenericPlayer {
 	
 	public Account accesAccount()
 	{
+		if(account==null){
+			account = new Account(0);
+		}
 		return this.account;
 	}
 	
