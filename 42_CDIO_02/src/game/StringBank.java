@@ -14,6 +14,19 @@ public class StringBank {
 	private static String dwarf = "dwarf";
 	private static String elf = "elf";
 	private static String thief = "thief";
+	
+	///Field names
+	private static String tower = "Tower";
+	private static String crater= "Crater";
+	private static String palaceGates = "Palace Gates";
+	private static String coldDesert = "Cold Desert";
+	private static String walledCity = "Walled City";
+	private static String monastery = "Monastery";
+	private static String blackCave = "Black Cave";
+	private static String huts = "Mountain Huts";
+	private static String werewall = "The Werewall";
+	private static String pit = "The Pit";
+	private static String goldmine = "Goldmine";
 
 	//Randomizer value
 	private static int randomvalue = 0;
@@ -410,8 +423,17 @@ public class StringBank {
 	
 	///String array for menu commands
 	private static String[] menu = {menuInfo,invalidInput};
+	
+	///String array for Field names
+	private static String[] fieldNames = {tower,crater,palaceGates,coldDesert,walledCity,
+										monastery,blackCave,huts,werewall,pit,goldmine};
 
 
+	
+	public static String getFieldNames(int i)
+	{
+		return fieldNames[i];
+	}
 	/***
 	 * 
 	 * @return
