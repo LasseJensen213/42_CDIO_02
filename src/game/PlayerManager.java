@@ -98,7 +98,7 @@ public class PlayerManager {
 		String input ="";
 		while(true)
 		{
-			System.out.println("CHOOSE_BETWEEN_THESE_STRINGBANK");
+			System.out.println(PlayerManager_StringBank.getCharacter());
 			input = keyb.nextLine();
 			input = input.toLowerCase();
 			if(input.equals(Fields_StringBank.getCharacterName(0)))
