@@ -3,6 +3,8 @@ package game;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import stringBanks.Fields_StringBank;
+
 public class Menu {
 
 	public static void main(String[] args) {
@@ -15,7 +17,7 @@ public class Menu {
 		
 		while(!endGame)
 		{
-			System.out.println(StringBank.menuString(0));
+			System.out.println(Fields_StringBank.menuString(0));
 			input = keyb.nextLine();
 			input = input.toLowerCase();
 			switch(input)
@@ -29,7 +31,7 @@ public class Menu {
 				break;
 			case "help":
 				break;
-			default: System.out.println(StringBank.menuString(1));
+			default: System.out.println(Fields_StringBank.menuString(1));
 			}
 		}
 		

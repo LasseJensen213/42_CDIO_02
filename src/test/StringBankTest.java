@@ -7,7 +7,7 @@ import java.util.Random;
 import org.junit.After;
 import org.junit.Before;
 
-import game.StringBank;
+import stringBanks.Fields_StringBank;
 
 public class StringBankTest {
 
@@ -26,143 +26,143 @@ public class StringBankTest {
 		int equal = 0;
 		//String
 		String Wizard0[] = {
-				StringBank.getStrWizardTower0(),
-				StringBank.getStrWizardCrater0(),
-				StringBank.getStrWizardPalaceGates0(),
-				StringBank.getStrWizardColdDesert0(),
-				StringBank.getStrWizardWalledCity0(),
-				StringBank.getStrWizardMonastary0(),
-				StringBank.getStrWizardBlackCave0(),
-				StringBank.getStrWizardHuts0(),
-				StringBank.getStrWizardWerewall0(),
-				StringBank.getStrWizardPit0(),
-				StringBank.getStrWizardGoldmine0(),
+				Fields_StringBank.getStrWizardTower0(),
+				Fields_StringBank.getStrWizardCrater0(),
+				Fields_StringBank.getStrWizardPalaceGates0(),
+				Fields_StringBank.getStrWizardColdDesert0(),
+				Fields_StringBank.getStrWizardWalledCity0(),
+				Fields_StringBank.getStrWizardMonastary0(),
+				Fields_StringBank.getStrWizardBlackCave0(),
+				Fields_StringBank.getStrWizardHuts0(),
+				Fields_StringBank.getStrWizardWerewall0(),
+				Fields_StringBank.getStrWizardPit0(),
+				Fields_StringBank.getStrWizardGoldmine0(),
 
 		};
 		String Wizard1[] = {
-				StringBank.getStrWizardTower1(),
-				StringBank.getStrWizardCrater1(),
-				StringBank.getStrWizardPalaceGates1(),
-				StringBank.getStrWizardColdDesert1(),
-				StringBank.getStrWizardWalledCity1(),
-				StringBank.getStrWizardMonastary1(),
-				StringBank.getStrWizardBlackCave1(),
-				StringBank.getStrWizardHuts1(),
-				StringBank.getStrWizardWerewall1(),
-				StringBank.getStrWizardPit1(),
-				StringBank.getStrWizardGoldmine1(),				
+				Fields_StringBank.getStrWizardTower1(),
+				Fields_StringBank.getStrWizardCrater1(),
+				Fields_StringBank.getStrWizardPalaceGates1(),
+				Fields_StringBank.getStrWizardColdDesert1(),
+				Fields_StringBank.getStrWizardWalledCity1(),
+				Fields_StringBank.getStrWizardMonastary1(),
+				Fields_StringBank.getStrWizardBlackCave1(),
+				Fields_StringBank.getStrWizardHuts1(),
+				Fields_StringBank.getStrWizardWerewall1(),
+				Fields_StringBank.getStrWizardPit1(),
+				Fields_StringBank.getStrWizardGoldmine1(),				
 		};
 
 		String Warrior0[] = {
-				StringBank.getStrWarriorTower0(),
-				StringBank.getStrWarriorCrater0(),
-				StringBank.getStrWarriorPalaceGates0(),
-				StringBank.getStrWarriorColdDesert0(),
-				StringBank.getStrWarriorWalledCity0(),
-				StringBank.getStrWarriorMonastary0(),
-				StringBank.getStrWarriorBlackCave0(),
-				StringBank.getStrWarriorHuts0(),
-				StringBank.getStrWarriorWerewall0(),
-				StringBank.getStrWarriorPit0(),
-				StringBank.getStrWarriorGoldmine0(),
+				Fields_StringBank.getStrWarriorTower0(),
+				Fields_StringBank.getStrWarriorCrater0(),
+				Fields_StringBank.getStrWarriorPalaceGates0(),
+				Fields_StringBank.getStrWarriorColdDesert0(),
+				Fields_StringBank.getStrWarriorWalledCity0(),
+				Fields_StringBank.getStrWarriorMonastary0(),
+				Fields_StringBank.getStrWarriorBlackCave0(),
+				Fields_StringBank.getStrWarriorHuts0(),
+				Fields_StringBank.getStrWarriorWerewall0(),
+				Fields_StringBank.getStrWarriorPit0(),
+				Fields_StringBank.getStrWarriorGoldmine0(),
 
 		};	
 		String Warrior1[] = {
-				StringBank.getStrWarriorTower1(),
-				StringBank.getStrWarriorCrater1(),
-				StringBank.getStrWarriorPalaceGates1(),
-				StringBank.getStrWarriorColdDesert1(),
-				StringBank.getStrWarriorWalledCity1(),
-				StringBank.getStrWarriorMonastary1(),
-				StringBank.getStrWarriorBlackCave1(),
-				StringBank.getStrWarriorHuts1(),
-				StringBank.getStrWarriorWerewall1(),
-				StringBank.getStrWarriorPit1(),
-				StringBank.getStrWarriorGoldmine1(),
+				Fields_StringBank.getStrWarriorTower1(),
+				Fields_StringBank.getStrWarriorCrater1(),
+				Fields_StringBank.getStrWarriorPalaceGates1(),
+				Fields_StringBank.getStrWarriorColdDesert1(),
+				Fields_StringBank.getStrWarriorWalledCity1(),
+				Fields_StringBank.getStrWarriorMonastary1(),
+				Fields_StringBank.getStrWarriorBlackCave1(),
+				Fields_StringBank.getStrWarriorHuts1(),
+				Fields_StringBank.getStrWarriorWerewall1(),
+				Fields_StringBank.getStrWarriorPit1(),
+				Fields_StringBank.getStrWarriorGoldmine1(),
 		};
 		String Dwarf0[] = {
-				StringBank.getStrDwarfTower0(),
-				StringBank.getStrDwarfCrater0(),
-				StringBank.getStrDwarfPalaceGates0(),
-				StringBank.getStrDwarfColdDesert0(),
-				StringBank.getStrDwarfWalledCity0(),
-				StringBank.getStrDwarfMonastary0(),
-				StringBank.getStrDwarfBlackCave0(),
-				StringBank.getStrDwarfHuts0(),
-				StringBank.getStrDwarfWerewall0(),
-				StringBank.getStrDwarfPit0(),
-				StringBank.getStrDwarfGoldmine0(),
+				Fields_StringBank.getStrDwarfTower0(),
+				Fields_StringBank.getStrDwarfCrater0(),
+				Fields_StringBank.getStrDwarfPalaceGates0(),
+				Fields_StringBank.getStrDwarfColdDesert0(),
+				Fields_StringBank.getStrDwarfWalledCity0(),
+				Fields_StringBank.getStrDwarfMonastary0(),
+				Fields_StringBank.getStrDwarfBlackCave0(),
+				Fields_StringBank.getStrDwarfHuts0(),
+				Fields_StringBank.getStrDwarfWerewall0(),
+				Fields_StringBank.getStrDwarfPit0(),
+				Fields_StringBank.getStrDwarfGoldmine0(),
 		};
 
 		String Dwarf1[] = {
-				StringBank.getStrDwarfTower1(),
-				StringBank.getStrDwarfCrater1(),
-				StringBank.getStrDwarfPalaceGates1(),
-				StringBank.getStrDwarfColdDesert1(),
-				StringBank.getStrDwarfWalledCity1(),
-				StringBank.getStrDwarfMonastary1(),
-				StringBank.getStrDwarfBlackCave1(),
-				StringBank.getStrDwarfHuts1(),
-				StringBank.getStrDwarfWerewall1(),
-				StringBank.getStrDwarfPit1(),
-				StringBank.getStrDwarfGoldmine1(),	
+				Fields_StringBank.getStrDwarfTower1(),
+				Fields_StringBank.getStrDwarfCrater1(),
+				Fields_StringBank.getStrDwarfPalaceGates1(),
+				Fields_StringBank.getStrDwarfColdDesert1(),
+				Fields_StringBank.getStrDwarfWalledCity1(),
+				Fields_StringBank.getStrDwarfMonastary1(),
+				Fields_StringBank.getStrDwarfBlackCave1(),
+				Fields_StringBank.getStrDwarfHuts1(),
+				Fields_StringBank.getStrDwarfWerewall1(),
+				Fields_StringBank.getStrDwarfPit1(),
+				Fields_StringBank.getStrDwarfGoldmine1(),	
 		};
 		String Elf0[] = {
-				StringBank.getStrElfTower0(),
-				StringBank.getStrElfCrater0(),
-				StringBank.getStrElfPalaceGates0(),
-				StringBank.getStrElfColdDesert0(),
-				StringBank.getStrElfWalledCity0(),
-				StringBank.getStrElfMonastary0(),
-				StringBank.getStrElfBlackCave0(),
-				StringBank.getStrElfHuts0(),
-				StringBank.getStrElfWerewall0(),
-				StringBank.getStrElfPit0(),
-				StringBank.getStrElfGoldmine0(),
+				Fields_StringBank.getStrElfTower0(),
+				Fields_StringBank.getStrElfCrater0(),
+				Fields_StringBank.getStrElfPalaceGates0(),
+				Fields_StringBank.getStrElfColdDesert0(),
+				Fields_StringBank.getStrElfWalledCity0(),
+				Fields_StringBank.getStrElfMonastary0(),
+				Fields_StringBank.getStrElfBlackCave0(),
+				Fields_StringBank.getStrElfHuts0(),
+				Fields_StringBank.getStrElfWerewall0(),
+				Fields_StringBank.getStrElfPit0(),
+				Fields_StringBank.getStrElfGoldmine0(),
 
 		};		
 		String Elf1[] = {
-				StringBank.getStrElfTower1(),
-				StringBank.getStrElfCrater1(),
-				StringBank.getStrElfPalaceGates1(),
-				StringBank.getStrElfColdDesert1(),
-				StringBank.getStrElfWalledCity1(),
-				StringBank.getStrElfMonastary1(),
-				StringBank.getStrElfBlackCave1(),
-				StringBank.getStrElfHuts1(),
-				StringBank.getStrElfWerewall1(),
-				StringBank.getStrElfPit1(),
-				StringBank.getStrElfGoldmine1(),
+				Fields_StringBank.getStrElfTower1(),
+				Fields_StringBank.getStrElfCrater1(),
+				Fields_StringBank.getStrElfPalaceGates1(),
+				Fields_StringBank.getStrElfColdDesert1(),
+				Fields_StringBank.getStrElfWalledCity1(),
+				Fields_StringBank.getStrElfMonastary1(),
+				Fields_StringBank.getStrElfBlackCave1(),
+				Fields_StringBank.getStrElfHuts1(),
+				Fields_StringBank.getStrElfWerewall1(),
+				Fields_StringBank.getStrElfPit1(),
+				Fields_StringBank.getStrElfGoldmine1(),
 		};		
 
 
 
 		String Thief0[] = {
-				StringBank.getStrThiefTower0(),
-				StringBank.getStrThiefCrater0(),
-				StringBank.getStrThiefPalaceGates0(),
-				StringBank.getStrThiefColdDesert0(),
-				StringBank.getStrThiefWalledCity0(),
-				StringBank.getStrThiefMonastary0(),
-				StringBank.getStrThiefBlackCave0(),
-				StringBank.getStrThiefHuts0(),
-				StringBank.getStrThiefWerewall0(),
-				StringBank.getStrThiefPit0(),
-				StringBank.getStrThiefGoldmine0()	
+				Fields_StringBank.getStrThiefTower0(),
+				Fields_StringBank.getStrThiefCrater0(),
+				Fields_StringBank.getStrThiefPalaceGates0(),
+				Fields_StringBank.getStrThiefColdDesert0(),
+				Fields_StringBank.getStrThiefWalledCity0(),
+				Fields_StringBank.getStrThiefMonastary0(),
+				Fields_StringBank.getStrThiefBlackCave0(),
+				Fields_StringBank.getStrThiefHuts0(),
+				Fields_StringBank.getStrThiefWerewall0(),
+				Fields_StringBank.getStrThiefPit0(),
+				Fields_StringBank.getStrThiefGoldmine0()	
 		};
 
 		String Thief1[] = {
-				StringBank.getStrThiefTower1(),	
-				StringBank.getStrThiefCrater1(),
-				StringBank.getStrThiefPalaceGates1(),
-				StringBank.getStrThiefColdDesert1(),
-				StringBank.getStrThiefWalledCity1(),
-				StringBank.getStrThiefMonastary1(),
-				StringBank.getStrThiefBlackCave1(),
-				StringBank.getStrThiefHuts1(),
-				StringBank.getStrThiefWerewall1(),
-				StringBank.getStrThiefPit1(),
-				StringBank.getStrThiefGoldmine1(),
+				Fields_StringBank.getStrThiefTower1(),	
+				Fields_StringBank.getStrThiefCrater1(),
+				Fields_StringBank.getStrThiefPalaceGates1(),
+				Fields_StringBank.getStrThiefColdDesert1(),
+				Fields_StringBank.getStrThiefWalledCity1(),
+				Fields_StringBank.getStrThiefMonastary1(),
+				Fields_StringBank.getStrThiefBlackCave1(),
+				Fields_StringBank.getStrThiefHuts1(),
+				Fields_StringBank.getStrThiefWerewall1(),
+				Fields_StringBank.getStrThiefPit1(),
+				Fields_StringBank.getStrThiefGoldmine1(),
 		};
 
 
@@ -174,7 +174,7 @@ public class StringBankTest {
 			// r is equal to the field number		
 			for (int r = 0; r<11;r++) {
 				for (int u = 0;u<2;u++) {				
-					StringBank.setrandomvalue(u);
+					Fields_StringBank.setrandomvalue(u);
 					if(u==0) {
 						switch (i) {
 						case 0 : {
@@ -224,7 +224,7 @@ public class StringBankTest {
 						}
 					}
 
-					Actual = StringBank.getBoardMessage(r, i);
+					Actual = Fields_StringBank.getBoardMessage(r, i);
 					if (Expected == Actual)  {
 						equal++;
 					}
