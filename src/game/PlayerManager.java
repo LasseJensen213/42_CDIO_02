@@ -34,7 +34,7 @@ public class PlayerManager {
 		for(int i = 0; i<numOfPlayers;i++)
 		{
 			charNum = chooseCharacter();
-			String asdf = PlayerManager_StringBank.getCharacter();
+			String asdf = PlayerManager_StringBank.getName();
 			System.out.println(asdf);
 			while(true)
 			{

@@ -4,10 +4,13 @@ public class PlayerManager_StringBank {
 
 	
 	//Choose character
-	private static String character = "Vælg mellem følgende karaktere: " +"\n Warrior \n Wizard \n Dwarf \n Elf \n Thief";
+	private static String character = "Choose between the following characters: " +"\n Warrior \n Wizard \n Dwarf \n Elf \n Thief";
 
 	//Choose name
-	private static String name = "Vælg deres navn: ";
+	private static String name = "Pleace choose your name";
+	
+	//Name taken
+	private static String nametaken = "Name has already been taken. Please enter a new one";
 	
 	public static String getCharacter() {
 		return character;
@@ -16,7 +19,7 @@ public class PlayerManager_StringBank {
 	public static String getName() {
 		return name;
 	}
-	}
+	
 	
 	
 }
