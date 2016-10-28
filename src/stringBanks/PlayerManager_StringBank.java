@@ -12,6 +12,15 @@ public class PlayerManager_StringBank {
 	//Name taken
 	private static String nametaken = "Name has already been taken. Please enter a new one";
 	
+	//Invalid character choice
+	private static String invalidchar = "Invalid character choice. \n\t Pleace enter your choice of character.";
+	
+	
+	
+	
+	
+	
+	//Getters
 	public static String getCharacter() {
 		return character;
 	}
@@ -25,5 +34,7 @@ public class PlayerManager_StringBank {
 	
 	}
 	
-	
+	public static String getInvalidChar() {
+		return invalidchar;
+	}
 }

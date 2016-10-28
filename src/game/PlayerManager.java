@@ -41,7 +41,7 @@ public class PlayerManager {
 				input = keyb.nextLine();
 				if(input.length()==0)
 				{
-					input = "PLAYER_PLACEHOLDER "+playerNum;
+					input = "Player"+playerNum;
 					if(nameTaken(nameArr,input,i))
 					{
 						System.out.println(PlayerManager_StringBank.getNameTaken());
@@ -59,7 +59,7 @@ public class PlayerManager {
 				{
 					if(nameTaken(nameArr,input,i))
 					{
-						System.out.println("STRINGBANK MANGLER NAME TAKEN BESKED");
+						System.out.println(PlayerManager_StringBank.getNameTaken());
 					}
 					else
 					{
@@ -123,7 +123,7 @@ public class PlayerManager {
 			}
 			else
 			{
-				System.out.println("INVALID INPUT PLACEHOLDER");
+				System.out.println(PlayerManager_StringBank.getInvalidChar());
 			}
 		}
 	}
