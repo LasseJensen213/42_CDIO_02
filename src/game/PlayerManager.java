@@ -1,6 +1,7 @@
 package game;
 
 import java.util.Scanner;
+import stringBanks.PlayerManager_StringBank;
 
 import stringBanks.Fields_StringBank;
 import stringBanks.PlayerManager_StringBank;
@@ -33,7 +34,8 @@ public class PlayerManager {
 		for(int i = 0; i<numOfPlayers;i++)
 		{
 			charNum = chooseCharacter();
-			System.out.println("PlayerManager_StringBank.character");
+			String asdf = PlayerManager_StringBank.getCharacter();
+			System.out.println(asdf);
 			while(true)
 			{
 				input = keyb.nextLine();
