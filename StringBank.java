@@ -60,7 +60,7 @@ public class StringBank {
 			+ "and feel the ambient atmosphere.";
 	
 	private static String strWizardMonastary1 ="You arrive at a monastery inhabited by worshippers of "
-			+ "the dwarf hero â€œThorin Ravenbeardâ€�. They let you rest up.";
+			+ "the dwarf hero Thorin Ravenbeard. They let you rest up.";
 	
 	private static String strWizardBlackCave0 ="In a black cave, you use all of your materials "
 			+ "to light up the cave. New materials cost you 70 coins.";
