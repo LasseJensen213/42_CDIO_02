@@ -20,6 +20,10 @@ public class PlayerManager_StringBank {
 		return name;
 	}
 	
+	public static String getNameTaken() {
+		return nametaken;
+	
+	}
 	
 	
 }
