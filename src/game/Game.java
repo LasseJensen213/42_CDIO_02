@@ -14,7 +14,7 @@ public class Game {
 	private int numOfPlayers = 2;
 	private int numOfDice = 2;
 	private int numOfDiceSides = 6;
-	private int nFields = 11;
+	private int nFields = 12;
 	
 
 
@@ -25,7 +25,7 @@ public class Game {
 		PlayerManager pMan = new PlayerManager(numOfPlayers);
 		Scanner keyb = new Scanner(System.in);
 		int[] playerPos = new int[numOfPlayers];
-		int[] fieldEffect = {250,-100,100,-20,180,0,-70,60,-80,-50,650};
+		int[] fieldEffect = {250,-100,100,-20,180,0,-70,60,-80,-50,650,0};
 		String input;
 		boolean noWinner = true;
 		int diceResult;
@@ -69,13 +69,13 @@ public class Game {
 	private void makeFields()
 	{
 		
-		String[] fieldEffect = {"+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
+		String[] fieldEffect = {"+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650","0"};
 		
 		Color[] bgColors = {Color.BLUE,Color.ORANGE ,Color.cyan ,Color.cyan ,Color.YELLOW ,
-				Color.gray ,Color.BLACK ,Color.LIGHT_GRAY ,Color.magenta ,Color.PINK ,Color.GREEN };
+				Color.gray ,Color.BLACK ,Color.LIGHT_GRAY ,Color.magenta ,Color.PINK ,Color.GREEN,Color.DARK_GRAY };
 		
 		Color[] fgColors = {Color.DARK_GRAY,Color.BLACK ,Color.green ,Color.red ,Color.BLUE ,
-				Color.MAGENTA ,Color.PINK ,Color.YELLOW ,Color.GRAY ,Color.white ,Color.ORANGE };
+				Color.MAGENTA ,Color.PINK ,Color.YELLOW ,Color.GRAY ,Color.white ,Color.ORANGE,Color.BLUE };
 		Field[] fields = new Field[nFields];
 		
 		for (int i = 0; i<nFields;i++)
