@@ -44,7 +44,7 @@ public class PlayerManager {
 					input = "PLAYER_PLACEHOLDER "+playerNum;
 					if(nameTaken(nameArr,input,i))
 					{
-						System.out.println("STRINGBANK MANGLER NAME TAKEN BESKED");
+						System.out.println(PlayerManager_StringBank.getNameTaken());
 						
 					}
 					else
