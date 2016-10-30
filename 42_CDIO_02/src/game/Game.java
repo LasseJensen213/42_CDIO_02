@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Color;
+import java.util.Random;
 import java.util.Scanner;
 
 import desktop_codebehind.*;
@@ -17,6 +18,7 @@ public class Game {
 	private int numOfDiceSides = 6;
 	private int nFields = 12;
 	private int turn = 0;
+	int[] playerPos = new int[numOfPlayers];
 	DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
 	PlayerManager pMan = new PlayerManager(numOfPlayers);
 
@@ -27,7 +29,6 @@ public class Game {
 		//Lets go
 		
 		Scanner keyb = new Scanner(System.in);
-		int[] playerPos = new int[numOfPlayers];
 		int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
 		String input;
 		boolean noWinner = true;
@@ -55,14 +56,17 @@ public class Game {
 			
 
 			diceCup.rollDice();
-
+			showDice();
 			diceResult = diceCup.getDiceTotal();
 
 			//Moves the player on the board
+			movePlayerModel(diceResult);
 			playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
-
+			
 			pMan.get(turn).accesAccount().deposit(fieldEffect[playerPos[turn]]);
+			
 			updatePlayerStatus();
+			
 			//Shows the field msg
 			Fields_StringBank.randomizer();
 			GUI.showMessage(Fields_StringBank.getBoardMessage(playerPos[turn],pMan.get(turn).getGameCharacter()));
@@ -81,9 +85,14 @@ public class Game {
 
 
 		}
+		
 		GUI.close();
 	}
 
+	
+	
+	
+	
 	private void makeFields()
 	{
 
@@ -149,6 +158,11 @@ private void initBoard()
 	{
 		GUI.addPlayer(pMan.get(i).getName(), pMan.get(i).accesAccount().getBalance());
 	}
+	
+	for(int i = 0; i<numOfPlayers;i++)
+	{
+		GUI.setCar(1, pMan.get(i).getName());
+	}
 
 }
 
@@ -159,6 +173,29 @@ private void updatePlayerStatus()
 	{
 		GUI.setBalance(pMan.get(i).getName(), pMan.get(i).accesAccount().getBalance());
 	}
+}
+
+private void movePlayerModel(int diceResult)
+{	
+
+		GUI.removeCar(playerPos[turn]+1, pMan.get(turn).getName());
+		GUI.setCar((playerPos[turn]+diceResult)%nFields+1, pMan.get(turn).getName());
+	
+}
+
+private void showDice()
+{
+	Random rand = new Random();
+	int x1 = rand.nextInt(6)+3;
+	int y1 = rand.nextInt(4)+3;
+	int x2 = x1+rand.nextInt(7)-3;
+	int y2 = y1+rand.nextInt(5)-2;
+	if (x1 == x2)
+	{
+		x2++;
+	}
+	//GUI.setDice(diceCup.getDiceValue(0), diceCup.getDiceValue(1));
+	GUI.setDice(diceCup.getDiceValue(0), x1, y1, diceCup.getDiceValue(1), x2, y2);
 }
 
 
