@@ -13,7 +13,7 @@ public class PlayerManager_StringBank {
 	private static String nametaken = "Name has already been taken. Please enter a new one";
 	
 	//Invalid character choice
-	private static String invalidchar = "Invalid character choice. \n\t Pleace enter your choice of character.";
+	private static String invalidchar = "Invalid character choice. \n\t Please enter your choice of character.";
 	
 	
 	
