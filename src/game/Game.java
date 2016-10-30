@@ -65,6 +65,8 @@ public class Game {
 
 
 		}
+		GUI.showMessage("Something");
+		menu();
 	}
 	
 	private void makeFields()
@@ -91,7 +93,8 @@ public class Game {
 	}
 	private int menu()
 	{
-		GUI.getUserSelection(Game_StringBank.getStartMessage(), Start,Help,End);
+		
+		GUI.getUserSelection(Game_StringBank.getStartMessage(), "Start","Help","End");
 		return 1;
 	}
 
