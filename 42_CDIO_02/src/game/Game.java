@@ -32,7 +32,7 @@ public class Game {
 		int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
 		String input;
 		boolean noWinner = true;
-		int diceResult;
+		int diceResult, fieldEffectInt, winnerNum;
 		makeFields();
 
 
@@ -48,7 +48,7 @@ public class Game {
 		while(noWinner)
 		{
 
-			
+			//Shows the button and the options
 			if(processInput())
 			{
 				break;
@@ -63,7 +63,25 @@ public class Game {
 			movePlayerModel(diceResult);
 			playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
 			
-			pMan.get(turn).accesAccount().deposit(fieldEffect[playerPos[turn]]);
+			fieldEffectInt = fieldEffect[playerPos[turn]];
+			if(fieldEffectInt<0)
+			{
+				
+				// if players balance goes to 0 or below he loses
+				if(!pMan.get(turn).accesAccount().withdraw(fieldEffectInt) || (pMan.get(turn).accesAccount().getBalance()==0))
+				{
+					noWinner = false;
+					
+					//next player wins - only makes sense when there are 2 players
+					winnerNum = (turn+1)%numOfPlayers;
+				}
+				
+			}
+			else
+			{
+				pMan.get(turn).accesAccount().deposit(fieldEffect[playerPos[turn]]);
+			}
+			
 			
 			updatePlayerStatus();
 			
@@ -77,6 +95,7 @@ public class Game {
 			if(pMan.get(turn).accesAccount().getBalance()>=3000)
 			{
 				noWinner = false;
+				winnerNum = turn;
 			}
 			
 			//Change turn unless the player lands on werewall
@@ -188,8 +207,12 @@ private void showDice()
 	Random rand = new Random();
 	int x1 = rand.nextInt(6)+3;
 	int y1 = rand.nextInt(4)+3;
+	
+	//Dice 2's position is relative to dice 1's
 	int x2 = x1+rand.nextInt(7)-3;
 	int y2 = y1+rand.nextInt(5)-2;
+	
+	//Makes sure that the dice doesn't land on each other
 	if (x1 == x2)
 	{
 		x2++;

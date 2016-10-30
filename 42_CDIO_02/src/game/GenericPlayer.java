@@ -28,6 +28,12 @@ public class GenericPlayer {
 		}
 		return this.account;
 	}
+
+	@Override
+	public String toString() {
+		return "Player [name=" + name + "]";
+	}
+	
 	
 
 }
