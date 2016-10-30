@@ -1,6 +1,6 @@
 package stringBanks;
 
-public class Game_Stringbank {
+public class Game_StringBank {
 	
 	
 	//Start message

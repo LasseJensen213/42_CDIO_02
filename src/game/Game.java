@@ -7,6 +7,7 @@ import desktop_codebehind.*;
 import desktop_fields.*;
 import desktop_resources.*;
 import stringBanks.Fields_StringBank;
+import stringBanks.Game_StringBank;
 
 public class Game {
 
