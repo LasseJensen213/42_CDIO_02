@@ -3,11 +3,14 @@ package stringBanks;
 public class PlayerManager_StringBank {
 
 	
+	private static String genericPlayerName = "Player";
+	
 	//Choose character
-	private static String character = "Choose between the following characters: " +"\n Warrior \n Wizard \n Dwarf \n Elf \n Thief";
+	private static String character = "Choose between the following characters: " +
+									"\n Warrior \n Wizard \n Dwarf \n Elf \n Thief";
 
 	//Choose name
-	private static String name = "Pleace choose your name";
+	private static String name = "Please choose your name";
 	
 	//Name taken
 	private static String nametaken = "Name has already been taken. Please enter a new one";
@@ -36,5 +39,10 @@ public class PlayerManager_StringBank {
 	
 	public static String getInvalidChar() {
 		return invalidchar;
+	}
+	
+	public static String getGenericPlayer()
+	{
+		return genericPlayerName;
 	}
 }

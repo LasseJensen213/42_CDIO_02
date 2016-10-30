@@ -33,6 +33,7 @@ public class PlayerManager {
 		
 		for(int i = 0; i<numOfPlayers;i++)
 		{
+			System.out.println("\n"+PlayerManager_StringBank.getGenericPlayer()+" "+playerNum+":");
 			charNum = chooseCharacter();
 			String asdf = PlayerManager_StringBank.getName();
 			System.out.println(asdf);
@@ -41,7 +42,7 @@ public class PlayerManager {
 				input = keyb.nextLine();
 				if(input.length()==0)
 				{
-					input = "Player"+playerNum;
+					input = PlayerManager_StringBank.getGenericPlayer()+" "+playerNum;
 					if(nameTaken(nameArr,input,i))
 					{
 						System.out.println(PlayerManager_StringBank.getNameTaken());
