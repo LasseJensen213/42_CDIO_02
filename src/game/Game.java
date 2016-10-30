@@ -104,14 +104,17 @@ public class Game {
 			case "start":
 			{
 				GUI.showMessage("The game will now proceed");
+				break;
 			}
 			case "help":
 			{
 				GUI.showMessage(Game_StringBank.getHelpMessage());
+				break;
 			}
 			case "end":
 			{
 				GUI.close();
+				break;
 			}
 			}
 		}
