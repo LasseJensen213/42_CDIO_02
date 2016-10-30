@@ -16,7 +16,7 @@ public class Game {
 	private int numOfDice = 2;
 	private int numOfDiceSides = 6;
 	private int nFields = 12;
-	
+
 
 
 	public void play()
@@ -32,7 +32,8 @@ public class Game {
 		int diceResult;
 		int turn = 0;
 		makeFields();
-			
+		GUI.showMessage("Something");
+		menu();	
 
 		for(int i = 0; i<numOfPlayers;i++)
 		{
@@ -65,37 +66,51 @@ public class Game {
 
 
 		}
-		GUI.showMessage("Something");
-		menu();
+
 	}
-	
+
 	private void makeFields()
 	{
-		
+
 		String[] fieldEffect = {"+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650","0"};
-		
+
 		Color[] bgColors = {Color.BLUE,Color.ORANGE ,Color.cyan ,Color.cyan ,Color.YELLOW ,
 				Color.gray ,Color.BLACK ,Color.LIGHT_GRAY ,Color.magenta ,Color.PINK ,Color.GREEN,Color.DARK_GRAY };
-		
+
 		Color[] fgColors = {Color.DARK_GRAY,Color.BLACK ,Color.green ,Color.red ,Color.BLUE ,
 				Color.MAGENTA ,Color.PINK ,Color.YELLOW ,Color.GRAY ,Color.white ,Color.ORANGE,Color.BLUE };
 		Field[] fields = new Field[nFields];
-		
+
 		for (int i = 0; i<nFields;i++)
 		{
 			fields[i]= new Tax.Builder().setTitle(Fields_StringBank.getFieldNames(i)).
 					setDescription(String.valueOf(fieldEffect[i])).
 					setSubText("").setBgColor(bgColors[i]).setFgColor(fgColors[i]).build();
 		}
-		
+
 		GUI.create(fields);
-		
+
 	}
-	private int menu()
+
+	//Test menu
+	boolean endGame = false;
+	private void menu()
 	{
-		
-		GUI.getUserSelection(Game_StringBank.getStartMessage(), "Start","Help","End");
-		return 1;
+		while(!endGame) {
+			String response = GUI.getUserSelection(Game_StringBank.getStartMessage(), "Start","Help","End");
+			response = response.toLowerCase();
+			switch(response)
+			{
+			case "start":
+			{
+				GUI.showMessage("Spillet gå nu igang");
+			}
+			case "Help":
+			{
+				GUI.showMessage(Game_StringBank.getHelpMessage());
+			}
+			}
+		}
 	}
 
 
