@@ -1,8 +1,8 @@
-package game;
+package stringBanks;
 
 import java.util.Random;
 
-public class StringBank {
+public class Fields_StringBank {
 
 	///Menu info
 	private static String menuInfo = "\"start\": starts the game, \"end\": ends game";
@@ -27,6 +27,7 @@ public class StringBank {
 	private static String werewall = "The Werewall";
 	private static String pit = "The Pit";
 	private static String goldmine = "Goldmine";
+	private static String start = "Start";
 
 	//Randomizer value
 	private static int randomvalue = 0;
@@ -72,7 +73,7 @@ public class StringBank {
 			+ "and feel the ambient atmosphere.";
 	
 	private static String strWizardMonastary1 ="You arrive at a monastery inhabited by worshippers of "
-			+ "the dwarf hero â€œThorin Ravenbeardâ€�. They let you rest up.";
+			+ "the dwarf hero Thorin Ravenbeard. They let you rest up.";
 	
 	private static String strWizardBlackCave0 ="In a black cave, you use all of your materials "
 			+ "to light up the cave. New materials cost you 70 coins.";
@@ -426,7 +427,7 @@ public class StringBank {
 	
 	///String array for Field names
 	private static String[] fieldNames = {tower,crater,palaceGates,coldDesert,walledCity,
-										monastery,blackCave,huts,werewall,pit,goldmine};
+										monastery,blackCave,huts,werewall,pit,goldmine,start};
 
 
 	
