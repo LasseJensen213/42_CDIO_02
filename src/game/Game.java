@@ -103,11 +103,15 @@ public class Game {
 			{
 			case "start":
 			{
-				GUI.showMessage("Spillet gå nu igang");
+				GUI.showMessage("The game will now proceed");
 			}
-			case "Help":
+			case "help":
 			{
 				GUI.showMessage(Game_StringBank.getHelpMessage());
+			}
+			case "end":
+			{
+				GUI.close();
 			}
 			}
 		}
