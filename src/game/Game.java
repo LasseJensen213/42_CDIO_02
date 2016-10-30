@@ -88,7 +88,11 @@ public class Game {
 		GUI.create(fields);
 		
 	}
-
+	private int menu()
+	{
+		GUI.getUserSelection(Game_StringBank.getStartMessage(), Start,Help,End);
+		return 1;
+	}
 
 
 
