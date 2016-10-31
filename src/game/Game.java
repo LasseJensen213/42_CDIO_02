@@ -134,6 +134,7 @@ public class Game {
 		GUI.showMessage("Please enter your name: ");
 		names[i]=GUI.getUserString("Please enter your name");
 		GUI.getUserSelection("Please choose your role: ", roles);
+		
 	}
 	}
 
