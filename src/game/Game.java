@@ -20,7 +20,7 @@ public class Game {
 	private int turn = 0;
 	int[] playerPos = new int[numOfPlayers];
 	DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
-	
+
 
 
 
@@ -128,17 +128,16 @@ public class Game {
 				{
 					bgColors[i] = Color.BLUE;
 				}		
-				
+
 			}
-			
+
 		}
-		
 		String fieldeffects[] = {"start","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
 		String[] fieldEffect = new String[40];
 		int NrReached = 0;
 		for(int i = 0;i<40;i++)
 		{
-			fieldEffect[i] = null;
+			fieldEffect[i] = "";
 			for(int r = 0;r<12;r++) 
 			{
 				if ( i==fieldsInUse[r]) 
@@ -146,23 +145,38 @@ public class Game {
 					fieldEffect[i] = fieldeffects[NrReached];
 					NrReached++;		
 				}		
-				
+
 			}
-			
+
 		}
-		
-		//= {"start","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
+
+		String[] fieldnames = new String[40];
+		int nrReached = 0;
+		for(int i = 0;i<40;i++){
+			fieldnames[i] = "";
+			for(int r = 0;r<12;r++) 
+			{
+				if ( i==fieldsInUse[r]) 
+				{
+					fieldnames[i]=Fields_StringBank.getFieldNames(nrReached);
+					nrReached++;
+				}		
+
+			}
+		}
+
+
+		//= {"","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
 		Color fgColors[] = new Color[40];
 		for(int i = 0;i<40;i++) {
-			fgColors[i] = Color.BLUE;
+			fgColors[i] = Color.YELLOW;
 		}
 
 		Field[] fields = new Field[nFields];
 
 		for (int i = 0; i<nFields;i++)
 		{
-			fields[i]= new Tax.Builder().setTitle(Fields_StringBank.completeFieldNames(i)).
-					setDescription(String.valueOf(fieldEffect[i])).
+			fields[i]= new Tax.Builder().setTitle(fieldnames[i]).setDescription(String.valueOf(fieldEffect[i])).
 					setSubText("").setBgColor(bgColors[i]).setFgColor(fgColors[i]).build();
 		}
 

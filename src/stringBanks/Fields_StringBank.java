@@ -430,26 +430,7 @@ public class Fields_StringBank {
 	
 	private static String[] fieldNames = {start,tower,crater,palaceGates,coldDesert,walledCity,monastery,blackCave,huts,werewall,pit,goldmine};
 	
-	private static String completeFieldNames(int nr)
-	{
-		String[] fieldnames = new String[40];
-		int nrReached = 0;
-		int fieldsInUse[] = {3,5,7,13,15,17,23,25,27,33,35,37};
-		
-		for(int i = 0;i<40;i++){
-			fieldnames[i] = "";
-			for(int r = 0;r<12;r++) 
-			{
-				if ( i==fieldsInUse[r]) 
-				{
-					fieldnames[i]=fieldNames[nrReached];
-				}		
-				
-			}
-		}
-		return fieldnames[nr];
-			
-	}
+	
 
 	
 	public static String getFieldNames(int i)
