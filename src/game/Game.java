@@ -57,7 +57,7 @@ public class Game {
 
 			diceCup.rollDice();
 			showDice();
-			diceResult = diceCup.getDiceTotal();
+			diceResult = gotofield(diceCup.getDiceTotal());
 
 			//Moves the player on the board
 			movePlayerModel(diceResult, pMan);
@@ -132,7 +132,7 @@ public class Game {
 			}
 
 		}
-		String fieldeffects[] = {"start","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
+		String fieldeffects[] = {"","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
 		String[] fieldEffect = new String[40];
 		int NrReached = 0;
 		for(int i = 0;i<40;i++)
@@ -166,7 +166,6 @@ public class Game {
 		}
 
 
-		//= {"","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
 		Color fgColors[] = new Color[40];
 		for(int i = 0;i<40;i++) {
 			fgColors[i] = Color.YELLOW;
@@ -214,7 +213,28 @@ public class Game {
 		}
 
 	}
-
+	//int fieldsInUse[] = {3,5,7,13,15,17,23,25,27,33,35,37};
+	public int gotofield(int i) 
+	{
+		int result = 0; 
+		switch(i)
+		{
+		case 1:	result = 3;
+		case 2:	result = 5;
+		case 3: result = 7;
+		case 4: result = 13;
+		case 5: result = 15;
+		case 6: result = 17;
+		case 7: result = 23;
+		case 8: result = 25;
+		case 9: result = 27;
+		case 10: result = 33;
+		case 11: result = 35;
+		case 12: result = 37;
+		default: result = 3;
+		}
+		return result;
+	}
 
 
 
