@@ -34,7 +34,19 @@ public class DiceTest {
 		int actual = dice.getNumOfSides();
 		assertEquals(expected,actual);
 	}
-	
+	/*
+	 * Since the number of sides is 1, the die can only roll a value of 1.
+	 */
+	@Test
+	public void setFaceValuetest() {
+		int expected = 6;
+		Dice dice = new Dice(1);
+		dice.roll();
+		dice.setFaceValue(expected);
+		int actual = dice.getFaceValue();
+		assertEquals(expected,actual);
+		
+	}
 	
 	@Test 
 	public void testAndreværdier() {
@@ -58,7 +70,7 @@ public class DiceTest {
 	 * In this case a die with 6 sides.
 	 */
 	@Test
-	public void testRoll() {
+	public void testFairnessRoll() {
 		Dice dice = new Dice(6);
 
 		//Instanser
