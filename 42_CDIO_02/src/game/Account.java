@@ -23,14 +23,21 @@ public class Account {
 
 
 
-	public void withdraw(int amount)
+	public boolean withdraw(int amount)
 	{
+		if(balance-amount<0)
+		{
+			System.out.println("Cannot withdraw - Insufficient funds");
+			return false;
+		}
 		this.balance -= amount;
+		return true;
 	}
 	
-	public void deposit(int amount)
+	public boolean deposit(int amount)
 	{
 		this.balance += amount;
+		return true;
 	}
 	
 	/*
@@ -38,15 +45,16 @@ public class Account {
 	 */
 	public void transferBalanceTo(Account account, int amount)
 	{
-		if((this.balance-amount)<0)
-		{
-			System.out.println("Insufficient funds.");
-		}
+		if(!withdraw(amount)){}				
 		else
 		{
-			this.withdraw(amount);
 			account.deposit(amount);
 		}
+	}
+	
+	public String toString()
+	{
+		return "This account has a balance of: "+balance;
 	}
 
 }

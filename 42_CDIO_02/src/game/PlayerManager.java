@@ -1,7 +1,10 @@
 package game;
 
 import java.util.Scanner;
+import stringBanks.PlayerManager_StringBank;
 
+import stringBanks.Fields_StringBank;
+import stringBanks.PlayerManager_StringBank;
 public class PlayerManager {
 	
 	private Player[] playerArr;
@@ -30,17 +33,19 @@ public class PlayerManager {
 		
 		for(int i = 0; i<numOfPlayers;i++)
 		{
+			System.out.println("\n"+PlayerManager_StringBank.getGenericPlayer()+" "+playerNum+":");
 			charNum = chooseCharacter();
-			System.out.println("BRUG FOR BESKED HER I STRINGBANK");
+			String asdf = PlayerManager_StringBank.getName();
+			System.out.println(asdf);
 			while(true)
 			{
 				input = keyb.nextLine();
 				if(input.length()==0)
 				{
-					input = "PLAYER_PLACEHOLDER "+playerNum;
+					input = PlayerManager_StringBank.getGenericPlayer()+" "+playerNum;
 					if(nameTaken(nameArr,input,i))
 					{
-						System.out.println("STRINGBANK MANGLER NAME TAKEN BESKED");
+						System.out.println(PlayerManager_StringBank.getNameTaken());
 						
 					}
 					else
@@ -55,7 +60,7 @@ public class PlayerManager {
 				{
 					if(nameTaken(nameArr,input,i))
 					{
-						System.out.println("STRINGBANK MANGLER NAME TAKEN BESKED");
+						System.out.println(PlayerManager_StringBank.getNameTaken());
 					}
 					else
 					{
@@ -94,32 +99,32 @@ public class PlayerManager {
 		String input ="";
 		while(true)
 		{
-			System.out.println("CHOOSE_BETWEEN_THESE_STRINGBANK");
+			System.out.println(PlayerManager_StringBank.getCharacter());
 			input = keyb.nextLine();
 			input = input.toLowerCase();
-			if(input.equals(StringBank.getCharacterName(0)))
+			if(input.equals(Fields_StringBank.getCharacterName(0)))
 			{
 				return 0;
 			}
-			else if(input.equals(StringBank.getCharacterName(1)))
+			else if(input.equals(Fields_StringBank.getCharacterName(1)))
 			{
 				return 1;
 			}
-			else if(input.equals(StringBank.getCharacterName(2)))
+			else if(input.equals(Fields_StringBank.getCharacterName(2)))
 			{
 				return 2;
 			}
-			else if(input.equals(StringBank.getCharacterName(3)))
+			else if(input.equals(Fields_StringBank.getCharacterName(3)))
 			{
 				return 3;
 			}
-			else if(input.equals(StringBank.getCharacterName(4)))
+			else if(input.equals(Fields_StringBank.getCharacterName(4)))
 			{
 				return 4;
 			}
 			else
 			{
-				System.out.println("INVALID INPUT PLACEHOLDER");
+				System.out.println(PlayerManager_StringBank.getInvalidChar());
 			}
 		}
 	}
