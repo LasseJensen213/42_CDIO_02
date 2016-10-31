@@ -461,10 +461,17 @@ public class Fields_StringBank {
 	}
 	//Getters for Strings.
 	public static String getCharacterName(int characterNumber)
+	
 	{
 		return characterNames[characterNumber];
 	}
 
+	public static String[] getCharacterArray() {
+		return characterNames;
+	}
+	
+	
+	
 
 	public static String getStrWizardTower0() {
 		return strWizardTower0;
