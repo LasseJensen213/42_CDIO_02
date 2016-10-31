@@ -68,7 +68,7 @@ public class Game {
 			{
 
 				// if players balance goes to 0 or below he loses
-				if(!pMan.get(turn).accesAccount().withdraw(fieldEffectInt) || (pMan.get(turn).accesAccount().getBalance()==0))
+				if(!pMan.get(turn).accessAccount().withdraw(fieldEffectInt) || (pMan.get(turn).accessAccount().getBalance()==0))
 				{
 					noWinner = false;
 
@@ -79,7 +79,7 @@ public class Game {
 			}
 			else
 			{
-				pMan.get(turn).accesAccount().deposit(fieldEffect[playerPos[turn]]);
+				pMan.get(turn).accessAccount().deposit(fieldEffect[playerPos[turn]]);
 			}
 
 
@@ -92,7 +92,7 @@ public class Game {
 
 
 
-			if(pMan.get(turn).accesAccount().getBalance()>=3000)
+			if(pMan.get(turn).accessAccount().getBalance()>=3000)
 			{
 				noWinner = false;
 				winnerNum = turn;
@@ -179,7 +179,7 @@ public class Game {
 		//Add the players on the board
 		for(int i = 0 ; i<numOfPlayers;i++)
 		{
-			GUI.addPlayer(pMan.get(i).getName(), pMan.get(i).accesAccount().getBalance());
+			GUI.addPlayer(pMan.get(i).getName(), pMan.get(i).accessAccount().getBalance());
 		}
 
 		for(int i = 0; i<numOfPlayers;i++)
@@ -194,7 +194,7 @@ public class Game {
 	{
 		for(int i = 0 ; i<numOfPlayers;i++)
 		{
-			GUI.setBalance(pMan.get(i).getName(), pMan.get(i).accesAccount().getBalance());
+			GUI.setBalance(pMan.get(i).getName(), pMan.get(i).accessAccount().getBalance());
 		}
 	}
 
@@ -229,7 +229,7 @@ public class Game {
 	{
 		String[] msg = Game_StringBank.getWinnerMsg();
 		GUI.showMessage(msg[0]+pMan.get(winnerNum).getName()+
-				msg[1]+pMan.get(winnerNum).accesAccount().getBalance()+msg[2]);
+				msg[1]+pMan.get(winnerNum).accessAccount().getBalance()+msg[2]);
 	}
 
 
