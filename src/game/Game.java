@@ -16,7 +16,7 @@ public class Game {
 	private int numOfPlayers = 2;
 	private int numOfDice = 2;
 	private int numOfDiceSides = 6;
-	private int nFields = 12;
+	private int nFields = 40;
 	private int turn = 0;
 	int[] playerPos = new int[numOfPlayers];
 	DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
@@ -118,14 +118,45 @@ public class Game {
 
 	private void makeFields()
 	{
+		int fieldsInUse[] = {3,5,7,13,15,17,23,25,27,33,35,37};
+		Color[] bgColors = new Color[40];
+		for(int i = 0;i<40;i++){
+			bgColors[i] = Color.BLACK;
+			for(int r = 0;r<12;r++) 
+			{
+				if ( i==fieldsInUse[r]) 
+				{
+					bgColors[i] = Color.BLUE;
+				}		
+				
+			}
+			
+		}
+		
+		String fieldeffects[] = {"start","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
+		String[] fieldEffect = new String[40];
+		int NrReached = 0;
+		for(int i = 0;i<40;i++)
+		{
+			fieldEffect[i] = null;
+			for(int r = 0;r<12;r++) 
+			{
+				if ( i==fieldsInUse[r]) 
+				{
+					fieldEffect[i] = fieldeffects[NrReached];
+					NrReached++;		
+				}		
+				
+			}
+			
+		}
+		
+		//= {"start","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
+		Color fgColors[] = new Color[40];
+		for(int i = 0;i<40;i++) {
+			fgColors[i] = Color.BLUE;
+		}
 
-		String[] fieldEffect = {"0","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
-
-		Color[] bgColors = {Color.DARK_GRAY,Color.BLUE,Color.ORANGE ,Color.cyan ,Color.cyan ,Color.YELLOW ,
-				Color.gray ,Color.BLACK ,Color.LIGHT_GRAY ,Color.magenta ,Color.PINK ,Color.GREEN };
-
-		Color[] fgColors = {Color.BLUE,Color.DARK_GRAY,Color.BLACK ,Color.green ,Color.red ,Color.BLUE ,
-				Color.MAGENTA ,Color.PINK ,Color.YELLOW ,Color.GRAY ,Color.white ,Color.ORANGE };
 		Field[] fields = new Field[nFields];
 
 		for (int i = 0; i<nFields;i++)
