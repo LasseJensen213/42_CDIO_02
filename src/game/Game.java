@@ -18,6 +18,7 @@ public class Game {
 	private int numOfDiceSides = 6;
 	private int nFields = 40;
 	private int turn = 0;
+	//Remembers the location of the players.
 	int[] playerPos = new int[numOfPlayers];
 	DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
 
@@ -36,10 +37,9 @@ public class Game {
 		makeFields();
 		PlayerManager pMan = new PlayerManager(numOfPlayers);
 		
-		//Sets the start location of the players
 		for(int i = 0; i<numOfPlayers;i++)
 		{
-			playerPos[i]=3;
+			playerPos[i]=0;
 		}
 
 		initBoard(pMan);
@@ -48,7 +48,6 @@ public class Game {
 
 		while(noWinner)
 		{
-
 			//Shows the button and the options
 			if(processInput(pMan))
 			{
@@ -61,10 +60,10 @@ public class Game {
 			diceResult = diceCup.getDiceTotal();
 
 			//Moves the player on the board
-			movePlayerModel(diceResult, pMan);
+			movePlayerModel(gotofield(diceResult), pMan);
 			playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
 
-			fieldEffectInt = fieldEffect[playerPos[turn]];
+			fieldEffectInt = getfieldeffect(playerPos[turn]);
 			if(fieldEffectInt<0)
 			{
 
@@ -80,7 +79,7 @@ public class Game {
 			}
 			else
 			{
-				pMan.get(turn).accessAccount().deposit(fieldEffect[playerPos[turn]]);
+				pMan.get(turn).accessAccount().deposit(getfieldeffect(playerPos[turn]));
 			}
 
 
@@ -101,7 +100,7 @@ public class Game {
 
 			//Change turn unless the player lands on werewall
 
-			turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
+			turn =(turn+(playerPos[turn]==gotofield(9)?0:1))%numOfPlayers;
 
 
 		}
@@ -214,33 +213,76 @@ public class Game {
 		}
 
 	}
-	//int fieldsInUse[] = {3,5,7,13,15,17,23,25,27,33,35,37};
+
 	public int gotofield(int i) 
 	{
 		int result = 0; 
 		switch(i)
 		{
 		case 1:	result = 3;
+		break;
 		case 2:	result = 5;
+		break;
 		case 3: result = 7;
+		break;
 		case 4: result = 13;
+		break;
 		case 5: result = 15;
+		break;
 		case 6: result = 17;
+		break;
 		case 7: result = 23;
+		break;
 		case 8: result = 25;
+		break;
 		case 9: result = 27;
+		break;
 		case 10: result = 33;
+		break;
 		case 11: result = 35;
+		break;
 		case 12: result = 37;
-		default: result = 3;
+		break;
 		}
 		return result;
 	}
-
-
+	public int getfieldeffect(int i)
+	{int result = 0; 
+	switch(i)
+	{
+	case 3:	result = 0;
+	break;
+	case 5:	result = 250;
+	break;
+	case 7: result = -100;
+	break;
+	case 13: result = 100;
+	break;
+	case 15: result = -20;
+	break;
+	case 17: result = 180;
+	break;
+	case 23: result = 0;
+	break;
+	case 25: result = -70;
+	break;
+	case 27: result = 60;
+	break;
+	case 33: result = -80;
+	break;
+	case 35: result = -50;
+	break;
+	case 37: result = 650;
+	break;
+	}
+	return result;
+		
+	}
 
 	private void initBoard(PlayerManager pMan)
 	{
+		//Start position:
+		int start = 1;
 
 		//Add the players on the board
 		for(int i = 0 ; i<numOfPlayers;i++)
@@ -250,7 +292,8 @@ public class Game {
 
 		for(int i = 0; i<numOfPlayers;i++)
 		{
-			GUI.setCar(1, pMan.get(i).getName());
+			GUI.setCar(gotofield(start)+1, pMan.get(i).getName());
+			
 		}
 
 	}
