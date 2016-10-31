@@ -20,25 +20,13 @@ public class Game {
 	private int turn = 0;
 	int[] playerPos = new int[numOfPlayers];
 	DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
-	PlayerManager pMan = new PlayerManager(numOfPlayers);
+	
 
 
 
 	public void play()
 	{
 		//Lets go
-		int turn = 0;
-		int[] fieldPos = new int[numOfPlayers];
-		for(int i = 0; i<numOfPlayers;i++)
-		{
-			fieldPos[i]=0;
-		}
-		DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
-		PlayerManager pMan = new PlayerManager(numOfPlayers);
-		
-		
-
-
 		Scanner keyb = new Scanner(System.in);
 		int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
 		String input;
@@ -46,14 +34,14 @@ public class Game {
 		int diceResult, fieldEffectInt;
 		int winnerNum = 0;
 		makeFields();
-
+		PlayerManager pMan = new PlayerManager(numOfPlayers);
 
 		for(int i = 0; i<numOfPlayers;i++)
 		{
 			playerPos[i]=0;
 		}
 
-		initBoard();
+		initBoard(pMan);
 
 
 
@@ -61,7 +49,7 @@ public class Game {
 		{
 
 			//Shows the button and the options
-			if(processInput())
+			if(processInput(pMan))
 			{
 				break;
 			}
@@ -72,7 +60,7 @@ public class Game {
 			diceResult = diceCup.getDiceTotal();
 
 			//Moves the player on the board
-			movePlayerModel(diceResult);
+			movePlayerModel(diceResult, pMan);
 			playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
 
 			fieldEffectInt = fieldEffect[playerPos[turn]];
@@ -95,7 +83,7 @@ public class Game {
 			}
 
 
-			updatePlayerStatus();
+			updatePlayerStatus(pMan);
 
 			//Shows the field msg
 			Fields_StringBank.randomizer();
@@ -118,7 +106,7 @@ public class Game {
 		}
 		if(!noWinner)
 		{
-			showWinnerMessage(winnerNum);
+			showWinnerMessage(winnerNum,pMan);
 		}
 		GUI.close();
 
@@ -158,7 +146,7 @@ public class Game {
 	 * false if game is continuing
 	 * @param String input
 	 */
-	private boolean processInput()
+	private boolean processInput(PlayerManager pMan)
 	{
 		String[] gameOptions = Game_StringBank.getGameOptions();
 
@@ -185,7 +173,7 @@ public class Game {
 
 
 
-	private void initBoard()
+	private void initBoard(PlayerManager pMan)
 	{
 
 		//Add the players on the board
@@ -202,7 +190,7 @@ public class Game {
 	}
 
 
-	private void updatePlayerStatus()
+	private void updatePlayerStatus(PlayerManager pMan)
 	{
 		for(int i = 0 ; i<numOfPlayers;i++)
 		{
@@ -210,7 +198,7 @@ public class Game {
 		}
 	}
 
-	private void movePlayerModel(int diceResult)
+	private void movePlayerModel(int diceResult,PlayerManager pMan)
 	{	
 
 		GUI.removeCar(playerPos[turn]+1, pMan.get(turn).getName());
@@ -237,7 +225,7 @@ public class Game {
 		GUI.setDice(diceCup.getDiceValue(0), x1, y1, diceCup.getDiceValue(1), x2, y2);
 	}
 
-	private void showWinnerMessage(int winnerNum)
+	private void showWinnerMessage(int winnerNum, PlayerManager pMan)
 	{
 		String[] msg = Game_StringBank.getWinnerMsg();
 		GUI.showMessage(msg[0]+pMan.get(winnerNum).getName()+

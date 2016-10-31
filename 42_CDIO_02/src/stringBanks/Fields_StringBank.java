@@ -475,6 +475,11 @@ public class Fields_StringBank {
 	{
 		return characterNames[characterNumber];
 	}
+	
+	public static String[] getCharacterName()
+	{
+		return characterNames;
+	}
 
 
 	public static String getStrWizardTower0() {

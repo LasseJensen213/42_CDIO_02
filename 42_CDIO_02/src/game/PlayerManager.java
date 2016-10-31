@@ -1,6 +1,8 @@
 package game;
 
 import java.util.Scanner;
+
+import desktop_resources.GUI;
 import stringBanks.PlayerManager_StringBank;
 
 import stringBanks.Fields_StringBank;
@@ -33,13 +35,10 @@ public class PlayerManager {
 		
 		for(int i = 0; i<numOfPlayers;i++)
 		{
-			System.out.println("\n"+PlayerManager_StringBank.getGenericPlayer()+" "+playerNum+":");
 			charNum = chooseCharacter();
-			String asdf = PlayerManager_StringBank.getName();
-			System.out.println(asdf);
 			while(true)
 			{
-				input = keyb.nextLine();
+				input = GUI.getUserString(PlayerManager_StringBank.getGenericPlayer()+" "+playerNum+" "+PlayerManager_StringBank.getName());
 				if(input.length()==0)
 				{
 					input = PlayerManager_StringBank.getGenericPlayer()+" "+playerNum;
@@ -60,7 +59,7 @@ public class PlayerManager {
 				{
 					if(nameTaken(nameArr,input,i))
 					{
-						System.out.println(PlayerManager_StringBank.getNameTaken());
+						GUI.showMessage(PlayerManager_StringBank.getNameTaken());
 					}
 					else
 					{
@@ -99,8 +98,8 @@ public class PlayerManager {
 		String input ="";
 		while(true)
 		{
-			System.out.println(PlayerManager_StringBank.getCharacter());
-			input = keyb.nextLine();
+			System.out.println();
+			input = GUI.getUserSelection(PlayerManager_StringBank.getCharacter(), Fields_StringBank.getCharacterName());
 			input = input.toLowerCase();
 			if(input.equals(Fields_StringBank.getCharacterName(0)))
 			{
