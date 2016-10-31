@@ -18,9 +18,10 @@ public class Game {
 	private int numOfDiceSides = 6;
 	private int nFields = 12;
 	private int turn = 0;
+	boolean skipTurn = false;
 	int[] playerPos = new int[numOfPlayers];
 	DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
-	
+
 
 
 
@@ -33,7 +34,7 @@ public class Game {
 		boolean noWinner = true;
 		int diceResult, fieldEffectInt;
 		int winnerNum = 0;
-		makeFields();
+		int playerLostTurn = 0;
 		PlayerManager pMan = new PlayerManager(numOfPlayers);
 
 		for(int i = 0; i<numOfPlayers;i++)
@@ -47,61 +48,71 @@ public class Game {
 
 		while(noWinner)
 		{
-
-			//Shows the button and the options
-			if(processInput(pMan))
+			if(skipTurn && playerLostTurn == turn)
 			{
-				break;
-			}
-
-
-			diceCup.rollDice();
-			showDice();
-			diceResult = diceCup.getDiceTotal();
-
-			//Moves the player on the board
-			movePlayerModel(diceResult, pMan);
-			playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
-
-			fieldEffectInt = fieldEffect[playerPos[turn]];
-			if(fieldEffectInt<0)
-			{
-
-				// if players balance goes to 0 or below he loses
-				if(!pMan.get(turn).accesAccount().withdraw(fieldEffectInt) || (pMan.get(turn).accesAccount().getBalance()==0))
-				{
-					noWinner = false;
-
-					//next player wins - only makes sense when there are 2 players
-					winnerNum = (turn+1)%numOfPlayers;
-				}
-
+				skipTurn = false;
 			}
 			else
 			{
-				pMan.get(turn).accesAccount().deposit(fieldEffect[playerPos[turn]]);
+				//Shows the button and the options
+				if(processInput(pMan))
+				{
+					break;
+				}
+
+
+				diceCup.rollDice();
+				showDice();
+				diceResult = diceCup.getDiceTotal();
+
+				//Moves the player on the board
+				movePlayerModel(diceResult, pMan);
+				playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
+
+				fieldEffectInt = fieldEffect[playerPos[turn]];
+				if(fieldEffectInt<0)
+				{
+					pMan.get(turn).accesAccount().withdraw(-fieldEffectInt);
+					if(pMan.get(turn).accesAccount().getBalance()==0)
+					{
+						pMan.get(turn).accesAccount().deposit(100);
+						playerLostTurn = turn;
+						skipTurn = true;
+					}
+				}
+				else
+				{
+					pMan.get(turn).accesAccount().deposit(fieldEffect[playerPos[turn]]);
+				}
+
+
+				updatePlayerStatus(pMan);
+
+				//Shows the field msg
+				Fields_StringBank.randomizer();
+				GUI.showMessage(Fields_StringBank.getBoardMessage(playerPos[turn],pMan.get(turn).getGameCharacter()));
+
+
+
+
+				if(pMan.get(turn).accesAccount().getBalance()>=3000)
+				{
+					noWinner = false;
+					winnerNum = turn;
+				}
+
+				//Change turn unless the player lands on werewall
+				if(skipTurn)
+				{
+					turn = (turn+1)%numOfPlayers;
+					skipTurn = false;
+				}
+				else
+				{
+					turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
+				}
+				
 			}
-
-
-			updatePlayerStatus(pMan);
-
-			//Shows the field msg
-			Fields_StringBank.randomizer();
-			GUI.showMessage(Fields_StringBank.getBoardMessage(playerPos[turn],pMan.get(turn).getGameCharacter()));
-
-
-
-
-			if(pMan.get(turn).accesAccount().getBalance()>=3000)
-			{
-				noWinner = false;
-				winnerNum = turn;
-			}
-
-			//Change turn unless the player lands on werewall
-
-			turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
-
 
 		}
 		if(!noWinner)
@@ -116,7 +127,7 @@ public class Game {
 
 
 
-	private void makeFields()
+	public void makeFields()
 	{
 
 		String[] fieldEffect = {"0","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};

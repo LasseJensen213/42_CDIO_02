@@ -3,38 +3,37 @@ package game;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import desktop_resources.GUI;
 import stringBanks.Fields_StringBank;
 
 public class Menu {
 
 	public static void main(String[] args) {
-		
-		
-		Scanner keyb = new Scanner(System.in);
-		boolean endGame = false;
-		String input;
 
-		
-		while(!endGame)
+
+
+		Game game = new Game();
+		game.makeFields();
+		String[] menu = Fields_StringBank.menu();
+		while(true)
 		{
-			System.out.println(Fields_StringBank.menuString(0));
-			input = keyb.nextLine();
-			input = input.toLowerCase();
-			switch(input)
+			String input = GUI.getUserSelection("Menu", menu);
+			if (input.equals(menu[0]))
 			{
-			case "start":
-				Game game = new Game();
 				game.play();
+			}
+			else if(input.equals(menu[1]))
+			{
+				GUI.showMessage("INFO_STRING");
+			}
+			else
+			{
+				GUI.close();
 				break;
-			case "end":
-				endGame = true;
-				break;
-			case "help":
-				break;
-			default: System.out.println(Fields_StringBank.menuString(1));
 			}
 		}
-		
+
+
 
 	}
 

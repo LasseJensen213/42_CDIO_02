@@ -16,7 +16,7 @@ public class Game_StringBank
 	
 	private static String winnerMsg_2 =" coins!";
 	
-	private static String[] gameOptions = {"Roll", "Replace the dice", "Exit game"};
+	private static String[] gameOptions = {"Roll", "Replace the dice", "Back to menu"};
 	
 	private static String[] winnerMsg = {winnerMsg_0,winnerMsg_1,winnerMsg_2};
 	

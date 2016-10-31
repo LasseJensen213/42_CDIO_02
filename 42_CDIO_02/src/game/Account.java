@@ -27,6 +27,7 @@ public class Account {
 	{
 		if(balance-amount<0)
 		{
+			balance = 0;
 			System.out.println("Cannot withdraw - Insufficient funds");
 			return false;
 		}
