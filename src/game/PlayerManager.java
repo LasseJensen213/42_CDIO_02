@@ -99,7 +99,7 @@ public class PlayerManager {
 		while(true)
 		{
 			System.out.println();
-			input = GUI.getUserSelection(PlayerManager_StringBank.getCharacter(), Fields_StringBank.getCharacterName());
+			input = GUI.getUserSelection(PlayerManager_StringBank.getCharacter(), Fields_StringBank.getCharacterArray());
 			input = input.toLowerCase();
 			if(input.equals(Fields_StringBank.getCharacterName(0)))
 			{
