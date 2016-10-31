@@ -41,7 +41,7 @@ public class DiceManager {
 		int total = 0;
 		for(int i = 0; i<diceList.size();i++)
 		{
-			total+=getDiceValue(i);
+			total = total + getDiceValue(i);
 		}
 		return total;
 	}

@@ -27,18 +27,19 @@ public class Game {
 	public void play()
 	{
 		//Lets go
-		Scanner keyb = new Scanner(System.in);
+		
 		int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
-		String input;
+		
 		boolean noWinner = true;
 		int diceResult, fieldEffectInt;
 		int winnerNum = 0;
 		makeFields();
 		PlayerManager pMan = new PlayerManager(numOfPlayers);
-
+		
+		//Sets the start location of the players
 		for(int i = 0; i<numOfPlayers;i++)
 		{
-			playerPos[i]=0;
+			playerPos[i]=3;
 		}
 
 		initBoard(pMan);
@@ -57,7 +58,7 @@ public class Game {
 
 			diceCup.rollDice();
 			showDice();
-			diceResult = gotofield(diceCup.getDiceTotal());
+			diceResult = diceCup.getDiceTotal();
 
 			//Moves the player on the board
 			movePlayerModel(diceResult, pMan);
