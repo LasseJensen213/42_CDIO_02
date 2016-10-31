@@ -21,7 +21,7 @@ public class Account {
 		this.balance = balance;
 	}
 
-
+// Not needed.
 
 	public void withdraw(int amount)
 	{

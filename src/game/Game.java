@@ -48,7 +48,8 @@ public class Game {
 					+Fields_StringBank.getCharacterName(pMan.get(turn).getGameCharacter())
 					+" "+pMan.get(turn).accesAccount().getBalance());
 			String[] options = {"no", "yes"};
-			GUI.getUserSelection("Hello",options );
+			String response = GUI.getUserSelection("Hello",options );
+			GUI.showMessage(response);
 			input = keyb.nextLine();
 			diceCup.rollDice();
 			diceResult = diceCup.getDiceTotal();
@@ -93,10 +94,10 @@ public class Game {
 	}
 
 	//Test menu
-	boolean endGame = false;
+	boolean proceed = false;
 	private void menu()
 	{
-		while(!endGame) {
+		while(!proceed) {
 			String response = GUI.getUserSelection(Game_StringBank.getStartMessage(), "Start","Help","End");
 			response = response.toLowerCase();
 			switch(response)
@@ -104,6 +105,7 @@ public class Game {
 			case "start":
 			{
 				GUI.showMessage("The game will now proceed");
+				proceed = true;
 				break;
 			}
 			case "help":
@@ -118,6 +120,21 @@ public class Game {
 			}
 			}
 		}
+	}
+	
+	private void choosecharacter() 
+	{
+		String names[] = new String[2];
+		String roles[] = new String[5];
+		for(int i=0;i<5;i++){
+			roles[i]=Fields_StringBank.getCharacterName(i);
+		}
+		for(int i=0;i<2;i++)
+		{
+		GUI.showMessage("Please enter your name: ");
+		names[i]=GUI.getUserString("Please enter your name");
+		GUI.getUserSelection("Please choose your role: ", roles);
+	}
 	}
 
 
