@@ -29,7 +29,7 @@ public class Game {
 	{
 		//Lets go
 		
-		int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
+		//int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
 		
 		boolean noWinner = true;
 		int diceResult, fieldEffectInt;
@@ -60,7 +60,7 @@ public class Game {
 			diceResult = diceCup.getDiceTotal();
 
 			//Moves the player on the board
-			movePlayerModel(gotofield(diceResult), pMan);
+			movePlayerModel(diceResult, pMan);
 			playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
 
 			fieldEffectInt = getfieldeffect(playerPos[turn]);
@@ -309,9 +309,10 @@ public class Game {
 
 	private void movePlayerModel(int diceResult,PlayerManager pMan)
 	{	
-
-		GUI.removeCar(playerPos[turn]+1, pMan.get(turn).getName());
-		GUI.setCar((playerPos[turn]+diceResult)%nFields+1, pMan.get(turn).getName());
+		int remove = gotofield(playerPos[turn]);
+		int set = gotofield((playerPos[turn]+diceResult)%nFields);
+		GUI.removeCar(remove, pMan.get(turn).getName());
+		GUI.setCar(set, pMan.get(turn).getName());
 
 	}
 
