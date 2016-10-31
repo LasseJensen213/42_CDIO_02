@@ -8,7 +8,7 @@ public class Player extends GenericPlayer
 	{
 		super(name);
 		this.gameCharacter = gameCharacter;
-		super.accesAccount().deposit(1000);
+		super.accessAccount().deposit(1000);
 	}
 	
 	public int getGameCharacter()

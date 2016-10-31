@@ -21,7 +21,7 @@ public class GenericPlayer {
 		this.name = name;
 	}
 	
-	public Account accesAccount()
+	public Account accessAccount()
 	{
 		if(account==null){
 			account = new Account(0);

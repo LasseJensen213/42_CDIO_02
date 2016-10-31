@@ -8,6 +8,8 @@ import desktop_fields.*;
 import desktop_resources.*;
 import stringBanks.Fields_StringBank;
 import stringBanks.Game_StringBank;
+import game.GenericPlayer;
+import game.Player;
 
 public class Game {
 
@@ -34,6 +36,7 @@ public class Game {
 		makeFields();
 		GUI.showMessage("Something");
 		menu();	
+		choosecharacter();
 
 		for(int i = 0; i<numOfPlayers;i++)
 		{
@@ -46,7 +49,7 @@ public class Game {
 		{
 			System.out.println(pMan.get(turn).getName()+" "
 					+Fields_StringBank.getCharacterName(pMan.get(turn).getGameCharacter())
-					+" "+pMan.get(turn).accesAccount().getBalance());
+					+" "+pMan.get(turn).accessAccount().getBalance());
 			String[] options = {"no", "yes"};
 			String response = GUI.getUserSelection("Hello",options );
 			GUI.showMessage(response);
@@ -56,9 +59,9 @@ public class Game {
 			playerPos[turn]=(playerPos[turn]+diceResult)%nFields;
 			Fields_StringBank.randomizer();
 			System.out.println(Fields_StringBank.getBoardMessage(playerPos[turn],pMan.get(turn).getGameCharacter()));
-			pMan.get(turn).accesAccount().deposit(fieldEffect[playerPos[turn]]);
+			pMan.get(turn).accessAccount().deposit(fieldEffect[playerPos[turn]]);
 
-			if(pMan.get(turn).accesAccount().getBalance()>=3000)
+			if(pMan.get(turn).accessAccount().getBalance()>=3000)
 			{
 				noWinner = false;
 			}
@@ -131,13 +134,14 @@ public class Game {
 		}
 		for(int i=0;i<2;i++)
 		{
-		GUI.showMessage("Please enter your name: ");
+		
 		names[i]=GUI.getUserString("Please enter your name");
-		GUI.getUserSelection("Please choose your role: ", roles);
+		roles [i] = GUI.getUserSelection("Please choose your role: ", roles);
+		
 		
 	}
 	}
-
+	
 
 
 }
