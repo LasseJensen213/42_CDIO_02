@@ -46,4 +46,3 @@ public class DiceManager {
 		return total;
 	}
 }
-
