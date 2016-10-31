@@ -21,13 +21,19 @@ public class GenericPlayer {
 		this.name = name;
 	}
 	
-	public Account accessAccount()
+	public Account accesAccount()
 	{
 		if(account==null){
 			account = new Account(0);
 		}
 		return this.account;
 	}
+
+	@Override
+	public String toString() {
+		return "Player [name=" + name + "]";
+	}
+	
 	
 
 }

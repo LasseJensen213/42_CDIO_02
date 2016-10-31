@@ -27,26 +27,21 @@ public class PlayerManager {
 	private Player[] initPlayers(int numOfPlayers)
 	{
 		playerArr = new Player[numOfPlayers];
+		Scanner keyb = new Scanner(System.in);
 		String[] nameArr = new String[numOfPlayers];
-		
 		String input;
 		int charNum;
 		
 		
-		
 		for(int i = 0; i<numOfPlayers;i++)
 		{
-			chooseCharacter();
-			
 			charNum = chooseCharacter();
-			String asdf = PlayerManager_StringBank.getName();
-			System.out.println(asdf);
 			while(true)
 			{
-				input = keyb.nextLine();
+				input = GUI.getUserString(PlayerManager_StringBank.getGenericPlayer()+" "+playerNum+" "+PlayerManager_StringBank.getName());
 				if(input.length()==0)
 				{
-					input = "Player"+playerNum;
+					input = PlayerManager_StringBank.getGenericPlayer()+" "+playerNum;
 					if(nameTaken(nameArr,input,i))
 					{
 						System.out.println(PlayerManager_StringBank.getNameTaken());
@@ -64,7 +59,7 @@ public class PlayerManager {
 				{
 					if(nameTaken(nameArr,input,i))
 					{
-						System.out.println(PlayerManager_StringBank.getNameTaken());
+						GUI.showMessage(PlayerManager_StringBank.getNameTaken());
 					}
 					else
 					{
@@ -99,29 +94,37 @@ public class PlayerManager {
 
 	private static int chooseCharacter()
 	{
+		Scanner keyb = new Scanner(System.in);
+		String input ="";
 		while(true)
 		{
-			String role = GUI.getUserSelection("Vælg rolle - Needs stringbank update", Fields_StringBank.getCharacterArray());
-			if (Fields_StringBank.getCharacterName(0) == role) {
+			System.out.println();
+			input = GUI.getUserSelection(PlayerManager_StringBank.getCharacter(), Fields_StringBank.getCharacterName());
+			input = input.toLowerCase();
+			if(input.equals(Fields_StringBank.getCharacterName(0)))
+			{
 				return 0;
 			}
-			else if (Fields_StringBank.getCharacterName(1) == role) {
+			else if(input.equals(Fields_StringBank.getCharacterName(1)))
+			{
 				return 1;
 			}
-			else if (Fields_StringBank.getCharacterName(2) == role) {
+			else if(input.equals(Fields_StringBank.getCharacterName(2)))
+			{
 				return 2;
 			}
-			else if (Fields_StringBank.getCharacterName(3) == role) {
+			else if(input.equals(Fields_StringBank.getCharacterName(3)))
+			{
 				return 3;
 			}
-			else if (Fields_StringBank.getCharacterName(4) == role) {
+			else if(input.equals(Fields_StringBank.getCharacterName(4)))
+			{
 				return 4;
 			}
-			
-			
-					
-			
-			
+			else
+			{
+				System.out.println(PlayerManager_StringBank.getInvalidChar());
+			}
 		}
 	}
 
