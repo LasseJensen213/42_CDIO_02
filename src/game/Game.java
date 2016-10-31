@@ -129,6 +129,7 @@ public class Game {
 	{
 		String names[] = new String[2];
 		String roles[] = new String[5];
+		String choosenroles[] = new String[2];
 		for(int i=0;i<5;i++){
 			roles[i]=Fields_StringBank.getCharacterName(i);
 		}
@@ -136,7 +137,8 @@ public class Game {
 		{
 		
 		names[i]=GUI.getUserString("Please enter your name");
-		roles [i] = GUI.getUserSelection("Please choose your role: ", roles);
+		choosenroles [i] = GUI.getUserSelection(names[i] + "Please choose your role: ", roles);
+		Player players[];
 		
 		
 	}

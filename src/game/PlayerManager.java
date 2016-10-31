@@ -1,6 +1,8 @@
 package game;
 
 import java.util.Scanner;
+
+import desktop_resources.GUI;
 import stringBanks.PlayerManager_StringBank;
 
 import stringBanks.Fields_StringBank;
@@ -25,14 +27,17 @@ public class PlayerManager {
 	private Player[] initPlayers(int numOfPlayers)
 	{
 		playerArr = new Player[numOfPlayers];
-		Scanner keyb = new Scanner(System.in);
 		String[] nameArr = new String[numOfPlayers];
+		
 		String input;
 		int charNum;
 		
 		
+		
 		for(int i = 0; i<numOfPlayers;i++)
 		{
+			chooseCharacter();
+			
 			charNum = chooseCharacter();
 			String asdf = PlayerManager_StringBank.getName();
 			System.out.println(asdf);
@@ -94,37 +99,29 @@ public class PlayerManager {
 
 	private static int chooseCharacter()
 	{
-		Scanner keyb = new Scanner(System.in);
-		String input ="";
 		while(true)
 		{
-			System.out.println(PlayerManager_StringBank.getCharacter());
-			input = keyb.nextLine();
-			input = input.toLowerCase();
-			if(input.equals(Fields_StringBank.getCharacterName(0)))
-			{
+			String role = GUI.getUserSelection("Vælg rolle - Needs stringbank update", Fields_StringBank.getCharacterArray());
+			if (Fields_StringBank.getCharacterName(0) == role) {
 				return 0;
 			}
-			else if(input.equals(Fields_StringBank.getCharacterName(1)))
-			{
+			else if (Fields_StringBank.getCharacterName(1) == role) {
 				return 1;
 			}
-			else if(input.equals(Fields_StringBank.getCharacterName(2)))
-			{
+			else if (Fields_StringBank.getCharacterName(2) == role) {
 				return 2;
 			}
-			else if(input.equals(Fields_StringBank.getCharacterName(3)))
-			{
+			else if (Fields_StringBank.getCharacterName(3) == role) {
 				return 3;
 			}
-			else if(input.equals(Fields_StringBank.getCharacterName(4)))
-			{
+			else if (Fields_StringBank.getCharacterName(4) == role) {
 				return 4;
 			}
-			else
-			{
-				System.out.println(PlayerManager_StringBank.getInvalidChar());
-			}
+			
+			
+					
+			
+			
 		}
 	}
 
