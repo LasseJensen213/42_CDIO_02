@@ -14,8 +14,16 @@ public class Game {
 	public void play()
 	{
 		//Lets go
+		int turn = 0;
+		int[] fieldPos = new int[numOfPlayers];
+		for(int i = 0; i<numOfPlayers;i++)
+		{
+			fieldPos[i]=0;
+		}
 		DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
 		PlayerManager pMan = new PlayerManager(numOfPlayers);
+		
+		
 	}
 
 	
