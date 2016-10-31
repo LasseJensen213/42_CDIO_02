@@ -16,7 +16,6 @@ public class Game {
 	private int numOfDiceSides = 6;
 	private int nFields = 12;
 	private int turn = 0;
-	boolean skipTurn = false;
 	int[] playerPos = new int[numOfPlayers];
 	DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
 
@@ -58,6 +57,7 @@ public class Game {
 				}
 
 
+				//Rolls dice and shows them on board
 				diceCup.rollDice();
 				showDice();
 				diceResult = diceCup.getDiceTotal();
@@ -66,6 +66,7 @@ public class Game {
 				movePlayerModel(diceResult, pMan);
 				playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
 
+				//Adds or subtracts The field effect from player's balance
 				fieldEffectInt = fieldEffect[playerPos[turn]];
 				if(fieldEffectInt<0)
 				{
@@ -84,6 +85,7 @@ public class Game {
 				}
 
 
+				//Updates players account balance on the board
 				updatePlayerStatus(pMan);
 
 				//Shows the field msg
@@ -93,6 +95,7 @@ public class Game {
 
 
 
+				//Checks if current player has won
 				if(pMan.get(turn).accessAccount().getBalance()>=3000)
 				{
 					noWinner = false;
