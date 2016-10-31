@@ -44,6 +44,15 @@ public class DiceTest {
 		dice.roll();
 		dice.setFaceValue(expected);
 		int actual = dice.getFaceValue();
+		assertEquals(expected,actual);	
+	}
+
+	@Test
+	public void getFaceValuetest() {
+		int expected = 7;
+		Dice dice = new Dice(6);
+		dice.setFaceValue(expected);
+		int actual = dice.getFaceValue();
 		assertEquals(expected,actual);
 		
 	}
