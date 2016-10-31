@@ -34,7 +34,6 @@ public class Game {
 		boolean noWinner = true;
 		int diceResult, fieldEffectInt;
 		int winnerNum = 0;
-		int playerLostTurn = 0;
 		PlayerManager pMan = new PlayerManager(numOfPlayers);
 
 		for(int i = 0; i<numOfPlayers;i++)
@@ -48,9 +47,11 @@ public class Game {
 
 		while(noWinner)
 		{
-			if(skipTurn && playerLostTurn == turn)
+			//Checks if the player has to skip this turn 
+			if(pMan.get(turn).getSkipTurn())
 			{
-				skipTurn = false;
+				pMan.get(turn).setSkipTurn(false);
+				turn = (turn+1)%numOfPlayers;
 			}
 			else
 			{
@@ -72,17 +73,18 @@ public class Game {
 				fieldEffectInt = fieldEffect[playerPos[turn]];
 				if(fieldEffectInt<0)
 				{
-					pMan.get(turn).accesAccount().withdraw(-fieldEffectInt);
-					if(pMan.get(turn).accesAccount().getBalance()==0)
+					pMan.get(turn).accessAccount().withdraw(-fieldEffectInt);
+					if(pMan.get(turn).accessAccount().getBalance()==0)
 					{
-						pMan.get(turn).accesAccount().deposit(100);
-						playerLostTurn = turn;
-						skipTurn = true;
+						GUI.showMessage("NEED_SKIP_TURN_MESSAGE_HERE");
+						pMan.get(turn).accessAccount().deposit(100);
+						pMan.get(turn).setSkipTurn(true);
+						
 					}
 				}
 				else
 				{
-					pMan.get(turn).accesAccount().deposit(fieldEffect[playerPos[turn]]);
+					pMan.get(turn).accessAccount().deposit(fieldEffect[playerPos[turn]]);
 				}
 
 
@@ -95,22 +97,16 @@ public class Game {
 
 
 
-				if(pMan.get(turn).accesAccount().getBalance()>=3000)
+				if(pMan.get(turn).accessAccount().getBalance()>=3000)
 				{
 					noWinner = false;
 					winnerNum = turn;
 				}
 
 				//Change turn unless the player lands on werewall
-				if(skipTurn)
-				{
-					turn = (turn+1)%numOfPlayers;
-					skipTurn = false;
-				}
-				else
-				{
-					turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
-				}
+				
+				turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
+				
 				
 			}
 
@@ -190,7 +186,7 @@ public class Game {
 		//Add the players on the board
 		for(int i = 0 ; i<numOfPlayers;i++)
 		{
-			GUI.addPlayer(pMan.get(i).getName(), pMan.get(i).accesAccount().getBalance());
+			GUI.addPlayer(pMan.get(i).getName(), pMan.get(i).accessAccount().getBalance());
 		}
 
 		for(int i = 0; i<numOfPlayers;i++)
@@ -205,7 +201,7 @@ public class Game {
 	{
 		for(int i = 0 ; i<numOfPlayers;i++)
 		{
-			GUI.setBalance(pMan.get(i).getName(), pMan.get(i).accesAccount().getBalance());
+			GUI.setBalance(pMan.get(i).getName(), pMan.get(i).accessAccount().getBalance());
 		}
 	}
 
@@ -240,7 +236,7 @@ public class Game {
 	{
 		String[] msg = Game_StringBank.getWinnerMsg();
 		GUI.showMessage(msg[0]+pMan.get(winnerNum).getName()+
-				msg[1]+pMan.get(winnerNum).accesAccount().getBalance()+msg[2]);
+				msg[1]+pMan.get(winnerNum).accessAccount().getBalance()+msg[2]);
 	}
 
 
