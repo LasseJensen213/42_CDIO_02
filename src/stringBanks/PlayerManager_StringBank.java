@@ -4,8 +4,7 @@ public class PlayerManager_StringBank {
 
 	
 	//Choose character
-	private static String character = "Choose between the following characters: " +"\n Warrior \n Wizard \n Dwarf \n Elf \n Thief";
-
+	private static String character = "Choose between the following characters: ";
 	//Choose name
 	private static String name = "Pleace choose your name";
 	
@@ -14,6 +13,7 @@ public class PlayerManager_StringBank {
 	
 	//Invalid character choice
 	private static String invalidchar = "Invalid character choice. \n\t Please enter your choice of character.";
+	
 	
 	
 	
