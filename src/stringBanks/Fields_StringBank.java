@@ -430,7 +430,7 @@ public class Fields_StringBank {
 	
 	private static String[] fieldNames = {start,tower,crater,palaceGates,coldDesert,walledCity,monastery,blackCave,huts,werewall,pit,goldmine};
 	
-	private static String[] completeFieldNames()
+	private static String completeFieldNames(int nr)
 	{
 		String[] fieldnames = new String[40];
 		int nrReached = 0;
@@ -447,7 +447,7 @@ public class Fields_StringBank {
 				
 			}
 		}
-		return fieldnames;
+		return fieldnames[nr];
 			
 	}
 

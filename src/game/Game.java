@@ -161,7 +161,7 @@ public class Game {
 
 		for (int i = 0; i<nFields;i++)
 		{
-			fields[i]= new Tax.Builder().setTitle(Fields_StringBank.getFieldNames(i)).
+			fields[i]= new Tax.Builder().setTitle(Fields_StringBank.completeFieldNames(i)).
 					setDescription(String.valueOf(fieldEffect[i])).
 					setSubText("").setBgColor(bgColors[i]).setFgColor(fgColors[i]).build();
 		}
