@@ -28,8 +28,12 @@ public class Menu {
 			}
 			else
 			{
-				GUI.close();
-				break;
+				if(game.confirmInput())
+				{	
+					GUI.close();
+					break;
+				}
+				
 			}
 		}
 

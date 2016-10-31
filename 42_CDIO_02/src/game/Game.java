@@ -75,7 +75,7 @@ public class Game {
 						GUI.showMessage("NEED_SKIP_TURN_MESSAGE_HERE");
 						pMan.get(turn).accessAccount().deposit(100);
 						pMan.get(turn).setSkipTurn(true);
-						
+
 					}
 				}
 				else
@@ -100,10 +100,10 @@ public class Game {
 				}
 
 				//Change turn unless the player lands on werewall
-				
+
 				turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
-				
-				
+
+
 			}
 
 		}
@@ -171,7 +171,10 @@ public class Game {
 			}
 			else if(input.equals(gameOptions[2]))
 			{
-				return true;
+				if(confirmInput())
+				{
+					return true;
+				}
 			}
 		}
 
@@ -214,7 +217,7 @@ public class Game {
 		}
 	}
 
-	
+
 	/**
 	 * Moves the player model, in this case his car
 	 * @param diceResult
@@ -228,7 +231,7 @@ public class Game {
 
 	}
 
-	
+
 	//Shows the dice with their face values on the board
 	private void showDice()
 	{
@@ -259,6 +262,12 @@ public class Game {
 		String[] msg = Game_StringBank.getWinnerMsg();
 		GUI.showMessage(msg[0]+pMan.get(winnerNum).getName()+
 				msg[1]+pMan.get(winnerNum).accessAccount().getBalance()+msg[2]);
+	}
+
+	public boolean confirmInput()
+	{
+		return GUI.getUserLeftButtonPressed(Game_StringBank.getConfirmMsg()[0], 
+				Game_StringBank.getConfirmMsg()[1], Game_StringBank.getConfirmMsg()[2]);
 	}
 
 
