@@ -11,7 +11,7 @@ public class Menu {
 	public static void main(String[] args) {
 
 
-
+		
 		Game game = new Game();
 		game.makeFields();
 		String[] menu = Fields_StringBank.menu();

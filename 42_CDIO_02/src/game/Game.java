@@ -2,9 +2,7 @@ package game;
 
 import java.awt.Color;
 import java.util.Random;
-import java.util.Scanner;
 
-import desktop_codebehind.*;
 import desktop_fields.*;
 import desktop_resources.*;
 import stringBanks.Fields_StringBank;
@@ -28,9 +26,7 @@ public class Game {
 	public void play()
 	{
 		//Lets go
-		Scanner keyb = new Scanner(System.in);
 		int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
-		String input;
 		boolean noWinner = true;
 		int diceResult, fieldEffectInt;
 		int winnerNum = 0;
@@ -123,6 +119,10 @@ public class Game {
 
 
 
+	/**
+	 * create an array of fields on the board<br>
+	 * need to call this before any other GUI method
+	 */
 	public void makeFields()
 	{
 
@@ -180,6 +180,10 @@ public class Game {
 
 
 
+	/**
+	 * Adds the players on the board and puts the player models in the start position
+	 * @param pMan
+	 */
 	private void initBoard(PlayerManager pMan)
 	{
 
@@ -197,6 +201,11 @@ public class Game {
 	}
 
 
+	/**
+	 * Updates the players balance on the board<br>
+	 * does not change his account balance 
+	 * @param pMan
+	 */
 	private void updatePlayerStatus(PlayerManager pMan)
 	{
 		for(int i = 0 ; i<numOfPlayers;i++)
@@ -205,6 +214,12 @@ public class Game {
 		}
 	}
 
+	
+	/**
+	 * Moves the player model, in this case his car
+	 * @param diceResult
+	 * @param pMan
+	 */
 	private void movePlayerModel(int diceResult,PlayerManager pMan)
 	{	
 
@@ -213,6 +228,8 @@ public class Game {
 
 	}
 
+	
+	//Shows the dice with their face values on the board
 	private void showDice()
 	{
 		Random rand = new Random();
@@ -224,7 +241,7 @@ public class Game {
 		int y2 = y1+rand.nextInt(5)-2;
 
 		//Makes sure that the dice doesn't land on each other
-		if (x1 == x2)
+		if (x1 == x2 && y2==y1)
 		{
 			x2++;
 		}
@@ -232,6 +249,11 @@ public class Game {
 		GUI.setDice(diceCup.getDiceValue(0), x1, y1, diceCup.getDiceValue(1), x2, y2);
 	}
 
+	/**
+	 * shows name and amount of coins of the winner as GUI message
+	 * @param winnerNum
+	 * @param pMan
+	 */
 	private void showWinnerMessage(int winnerNum, PlayerManager pMan)
 	{
 		String[] msg = Game_StringBank.getWinnerMsg();
