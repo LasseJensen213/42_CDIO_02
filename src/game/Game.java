@@ -3,7 +3,7 @@ package game;
 import java.awt.Color;
 import java.util.Random;
 import java.util.Scanner;
-
+import java.util.concurrent.TimeUnit;
 import desktop_codebehind.*;
 import desktop_fields.*;
 import desktop_resources.*;
@@ -25,7 +25,7 @@ public class Game {
 
 
 
-	public void play()
+	public void play() throws InterruptedException
 	{
 		//Lets go
 
@@ -309,13 +309,13 @@ public class Game {
 		}
 	}
 
-	private void movePlayerModel(int diceResult,PlayerManager pMan)
+	private void movePlayerModel(int diceResult,PlayerManager pMan) throws InterruptedException
 	{	
 		
-		GUI.removeCar(gotofield(playerPos[turn]), pMan.get(turn).getName());
-		updatePlayerPos(diceResult);
+		updatePlayerPos(diceResult,pMan);
 		int set = playerPos[turn];
 		GUI.setCar(gotofield(set), pMan.get(turn).getName());
+		
 
 	}
 
@@ -347,15 +347,20 @@ public class Game {
 
 	
 
-	private void updatePlayerPos(int diceResult)
+	private void updatePlayerPos(int diceResult, PlayerManager pMan) throws InterruptedException
 	{
+		int wait = 500;
 		for(int i = 0;i<diceResult;i++)
 		{
+			GUI.removeCar(gotofield(playerPos[turn]),pMan.get(turn).getName());
 			playerPos[turn]++;
+			
 			if(playerPos[turn]==12)
 			{
 				playerPos[turn]=1;
 			}
+			GUI.setCar(gotofield(playerPos[turn]),pMan.get(turn).getName());
+			TimeUnit.MILLISECONDS.sleep(wait);
 		}
 	}
 	
