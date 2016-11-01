@@ -27,7 +27,6 @@ public class PlayerManager {
 	private Player[] initPlayers(int numOfPlayers)
 	{
 		playerArr = new Player[numOfPlayers];
-		Scanner keyb = new Scanner(System.in);
 		String[] nameArr = new String[numOfPlayers];
 		String input;
 		int charNum;
@@ -94,7 +93,6 @@ public class PlayerManager {
 
 	private static int chooseCharacter()
 	{
-		Scanner keyb = new Scanner(System.in);
 		String input ="";
 		while(true)
 		{
@@ -120,10 +118,6 @@ public class PlayerManager {
 			else if(input.equals(Fields_StringBank.getCharacterName(4)))
 			{
 				return 4;
-			}
-			else
-			{
-				System.out.println(PlayerManager_StringBank.getInvalidChar());
 			}
 		}
 	}
