@@ -17,6 +17,7 @@ public class Game {
 	private int numOfDiceSides = 6;
 	private int nFields = 40;
 	private int turn = 0;
+	private int wait = 400;
 	//Remembers the location of the players.
 	int[] playerPos = new int[numOfPlayers];
 	int gotofield[] = {4,6,8,14,16,18,24,26,28,34,36,38};
@@ -65,7 +66,6 @@ public class Game {
 
 				//Moves the player on the board
 				movePlayerModel(diceResult, pMan);
-				playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
 
 				//Adds or subtracts The field effect from player's balance
 				fieldEffectInt = fieldEffect[playerPos[turn]];
@@ -91,9 +91,9 @@ public class Game {
 
 				//Shows the field msg
 				Fields_StringBank.randomizer();
-				GUI.showMessage(Fields_StringBank.getBoardMessage(playerPos[turn],pMan.get(turn).getGameCharacter()));
-
-
+				int fieldnumber = playerPos[turn]-1;
+				int gamechar = pMan.get(turn).getGameCharacter();
+				GUI.showMessage(Fields_StringBank.getBoardMessage(fieldnumber,gamechar));
 
 
 				//Checks if current player has won
@@ -105,7 +105,7 @@ public class Game {
 
 				//Change turn unless the player lands on werewall
 
-				turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
+				turn =(turn+(playerPos[turn]==gotofield[9]?0:1))%numOfPlayers;
 
 
 			}
@@ -265,7 +265,7 @@ public class Game {
 
 	}
 
-	private void showDice()
+	private void showDice() throws InterruptedException
 	{
 		Random rand = new Random();
 		int x1 = rand.nextInt(6)+3;
@@ -274,14 +274,32 @@ public class Game {
 		//Dice 2's position is relative to dice 1's
 		int x2 = x1+rand.nextInt(7)-3;
 		int y2 = y1+rand.nextInt(5)-2;
+		
+		int rotation1 = rand.nextInt(360);
+		int rotation2 = rand.nextInt(360);
+		int faceValue1 = rand.nextInt(6)+1;
+		int faceValue2 = rand.nextInt(6)+1;
 
 		//Makes sure that the dice doesn't land on each other
-		if (x1 == x2)
+		if (x1 == x2 && y1==y2)
 		{
 			x2++;
 		}
+		
+		for(int i = 0; i<rand.nextInt(3)+4;i++)
+		{
+			faceValue1 = rand.nextInt(6)+1;
+			faceValue2 = rand.nextInt(6)+1;
+			for(int k = 0; k<rand.nextInt(5)+30;k++)
+			{
+				GUI.setDice(faceValue1, rotation1, x1, y1, faceValue2, rotation2, x2, y2);
+				rotation1 = (rotation1+7)%360;
+				rotation2 = (rotation2+7)%360;
+				TimeUnit.MILLISECONDS.sleep(12);
+			}
+		}
 		//GUI.setDice(diceCup.getDiceValue(0), diceCup.getDiceValue(1));
-		GUI.setDice(diceCup.getDiceValue(0), x1, y1, diceCup.getDiceValue(1), x2, y2);
+		GUI.setDice(diceCup.getDiceValue(0),rotation1, x1, y1, diceCup.getDiceValue(1),rotation2, x2, y2);
 	}
 
 	private void showWinnerMessage(int winnerNum, PlayerManager pMan)
@@ -295,7 +313,7 @@ public class Game {
 
 	private void updatePlayerPos(int diceResult, PlayerManager pMan) throws InterruptedException
 	{
-		int wait = 500;
+		
 		for(int i = 0;i<diceResult;i++)
 		{
 			GUI.removeCar(gotofield[playerPos[turn]],pMan.get(turn).getName());
