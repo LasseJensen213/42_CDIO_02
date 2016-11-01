@@ -28,18 +28,18 @@ public class Game {
 	public void play()
 	{
 		//Lets go
-		
+
 		//int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
-		
+
 		boolean noWinner = true;
 		int diceResult, fieldEffectInt;
 		int winnerNum = 0;
 		makeFields();
 		PlayerManager pMan = new PlayerManager(numOfPlayers);
-		
+
 		for(int i = 0; i<numOfPlayers;i++)
 		{
-			playerPos[i]=0;
+			playerPos[i]=1;
 		}
 
 		initBoard(pMan);
@@ -59,9 +59,9 @@ public class Game {
 			showDice();
 			diceResult = diceCup.getDiceTotal();
 
-			//Moves the player on the board
+			//Moves the player on the board and updates the player position
 			movePlayerModel(diceResult, pMan);
-			playerPos[turn]=(playerPos[turn]+diceResult)%nFields; 
+			
 
 			fieldEffectInt = getfieldeffect(playerPos[turn]);
 			if(fieldEffectInt<0)
@@ -87,7 +87,9 @@ public class Game {
 
 			//Shows the field msg
 			Fields_StringBank.randomizer();
-			GUI.showMessage(Fields_StringBank.getBoardMessage(playerPos[turn],pMan.get(turn).getGameCharacter()));
+			int fieldnumber = playerPos[turn]-2;
+			int gamechar = pMan.get(turn).getGameCharacter();
+			GUI.showMessage(Fields_StringBank.getBoardMessage(fieldnumber,gamechar));
 
 
 
@@ -216,67 +218,67 @@ public class Game {
 
 	public int gotofield(int i) 
 	{
-		int result = 0; 
+		int result=0; 
 		switch(i)
 		{
-		case 1:	result = 3;
+		case 0: result = 4;
 		break;
-		case 2:	result = 5;
+		case 1:	result = 6;
 		break;
-		case 3: result = 7;
+		case 2: result = 8;
 		break;
-		case 4: result = 13;
+		case 3: result = 14;
 		break;
-		case 5: result = 15;
+		case 4: result = 16;
 		break;
-		case 6: result = 17;
+		case 5: result = 18;
 		break;
-		case 7: result = 23;
+		case 6: result = 24;
 		break;
-		case 8: result = 25;
+		case 7: result = 26;
 		break;
-		case 9: result = 27;
+		case 8: result = 28;
 		break;
-		case 10: result = 33;
+		case 9: result = 34;
 		break;
-		case 11: result = 35;
+		case 10: result = 36;
 		break;
-		case 12: result = 37;
+		case 11: result = 38;
 		break;
 		}
 		return result;
 	}
 	public int getfieldeffect(int i)
-	{int result = 0; 
+	{int result=0; 
 	switch(i)
 	{
-	case 3:	result = 0;
+	case 0:	result = 0;
 	break;
-	case 5:	result = 250;
+	case 1:	result = 250;
 	break;
-	case 7: result = -100;
+	case 2: result = -100;
 	break;
-	case 13: result = 100;
+	case 3: result = 100;
 	break;
-	case 15: result = -20;
+	case 4: result = -20;
 	break;
-	case 17: result = 180;
+	case 5: result = 180;
 	break;
-	case 23: result = 0;
+	case 6: result = 0;
 	break;
-	case 25: result = -70;
+	case 7: result = -70;
 	break;
-	case 27: result = 60;
+	case 8: result = 60;
 	break;
-	case 33: result = -80;
+	case 9: result = -80;
 	break;
-	case 35: result = -50;
+	case 10: result = -50;
 	break;
-	case 37: result = 650;
+	case 11: result = 650;
 	break;
 	}
 	return result;
-		
+
 	}
 
 	private void initBoard(PlayerManager pMan)
@@ -292,8 +294,8 @@ public class Game {
 
 		for(int i = 0; i<numOfPlayers;i++)
 		{
-			GUI.setCar(gotofield(start)+1, pMan.get(i).getName());
-			
+			GUI.setCar(gotofield(start), pMan.get(i).getName());
+
 		}
 
 	}
@@ -309,10 +311,11 @@ public class Game {
 
 	private void movePlayerModel(int diceResult,PlayerManager pMan)
 	{	
-		int remove = gotofield(playerPos[turn]);
-		int set = gotofield((playerPos[turn]+diceResult)%nFields);
-		GUI.removeCar(remove, pMan.get(turn).getName());
-		GUI.setCar(set, pMan.get(turn).getName());
+		
+		GUI.removeCar(gotofield(playerPos[turn]), pMan.get(turn).getName());
+		updatePlayerPos(diceResult);
+		int set = playerPos[turn];
+		GUI.setCar(gotofield(set), pMan.get(turn).getName());
 
 	}
 
@@ -342,7 +345,19 @@ public class Game {
 				msg[1]+pMan.get(winnerNum).accessAccount().getBalance()+msg[2]);
 	}
 
+	
 
-
+	private void updatePlayerPos(int diceResult)
+	{
+		for(int i = 0;i<diceResult;i++)
+		{
+			playerPos[turn]++;
+			if(playerPos[turn]==12)
+			{
+				playerPos[turn]=1;
+			}
+		}
+	}
+	
 
 }
