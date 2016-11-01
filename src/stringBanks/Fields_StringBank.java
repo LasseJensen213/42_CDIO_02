@@ -10,11 +10,11 @@ public class Fields_StringBank {
 	private static String invalidInput = "Invalid input";
 
 	///Character ( "role" ) Names
-	private static String wizard = "wizard";
-	private static String warrior = "warrior";
-	private static String dwarf = "dwarf";
-	private static String elf = "elf";
-	private static String thief = "thief";
+	private static String wizard = "Wizard";
+	private static String warrior = "Warrior";
+	private static String dwarf = "Dwarf";
+	private static String elf = "Elf";
+	private static String thief = "Thief";
 	
 	///Field names
 	private static String tower = "Tower";
@@ -98,7 +98,7 @@ public class Fields_StringBank {
 	private static String strWizardPit0 ="You fall into THE PIT and cannot get out. A random stranger "
 			+ "charge you 50 coins for helping you out.";
 	
-	private static String strWizardPit1 ="You are killing undeads at the pit. Sadly, you donâ€™t "
+	private static String strWizardPit1 ="You are killing undeads at the pit. Sadly, you don't "
 			+ "notice that a ghost steal some of your coins. You lose 50 coins.";
 	
 	private static String strWizardGoldmine0 ="You discover a lead lode and use your alchemy skills to turn "

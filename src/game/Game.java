@@ -68,7 +68,7 @@ public class Game {
 			{
 
 				// if players balance goes to 0 or below he loses
-				if(!pMan.get(turn).accessAccount().withdraw(fieldEffectInt) || (pMan.get(turn).accessAccount().getBalance()==0))
+				if(!pMan.get(turn).accessAccount().withdraw(-fieldEffectInt) || (pMan.get(turn).accessAccount().getBalance()==0))
 				{
 					noWinner = false;
 
@@ -87,7 +87,7 @@ public class Game {
 
 			//Shows the field msg
 			Fields_StringBank.randomizer();
-			int fieldnumber = playerPos[turn]-2;
+			int fieldnumber = playerPos[turn]-1;
 			int gamechar = pMan.get(turn).getGameCharacter();
 			GUI.showMessage(Fields_StringBank.getBoardMessage(fieldnumber,gamechar));
 
@@ -284,7 +284,7 @@ public class Game {
 	private void initBoard(PlayerManager pMan)
 	{
 		//Start position:
-		int start = 1;
+		int start = 0;
 
 		//Add the players on the board
 		for(int i = 0 ; i<numOfPlayers;i++)
