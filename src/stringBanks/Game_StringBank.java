@@ -16,9 +16,17 @@ public class Game_StringBank
 	
 	private static String winnerMsg_2 =" coins!";
 	
-	private static String[] gameOptions = {"Roll", "Replace the dice", "Exit game"};
+	private static String confirmMessage = "Are you sure?";
+	
+	private static String confirm_yes ="Yes";
+	
+	private static String confirm_no ="No";
+	
+	private static String[] gameOptions = {"Roll", "Replace the dice", "Back to menu"};
 	
 	private static String[] winnerMsg = {winnerMsg_0,winnerMsg_1,winnerMsg_2};
+	
+	private static String[] confirmMsg = {confirmMessage,confirm_yes,confirm_no};
 	
 	
 	/**
@@ -48,6 +56,11 @@ public class Game_StringBank
 	public static String[] getWinnerMsg()
 	{
 		return winnerMsg;
+	}
+	
+	public static String[] getConfirmMsg()
+	{
+		return confirmMsg;
 	}
 
 	
