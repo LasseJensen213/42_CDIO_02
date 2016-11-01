@@ -117,7 +117,7 @@ public class Game {
 
 
 
-
+	//Creates the fields
 	private void makeFields()
 	{
 		int fieldsInUse[] = {3,5,7,13,15,17,23,25,27,33,35,37};
