@@ -6,9 +6,10 @@ import java.util.Random;
 public class Fields_StringBank {
 
 	///Menu info
-	private static String menuInfo = "\"start\": starts the game, \"end\": ends game";
-	private static String invalidInput = "Invalid input";
-
+		private static String menuInfo_01 = "Start game";
+		private static String menuInfo_02 = "Info";
+		private static String menuInfo_03 = "Exit game";
+		
 	///Character ( "role" ) Names
 	private static String wizard = "Wizard";
 	private static String warrior = "Warrior";
@@ -424,7 +425,7 @@ public class Fields_StringBank {
 	private static String[] characterNames = {wizard,warrior,dwarf,elf,thief};
 	
 	///String array for menu commands
-	private static String[] menu = {menuInfo,invalidInput};
+	private static String[] menu = {menuInfo_01,menuInfo_02,menuInfo_03};
 	
 	///String array for Field names
 	
@@ -442,12 +443,11 @@ public class Fields_StringBank {
 	 * @return
 	 *  String array with elements - 0 : menuinfo , 1: invalidInput
 	 */
-	public static String menuString(int menuCommand)
+	public static String[] menu()
 	{
-		return menu[menuCommand];
+		return menu;
 
-	}
-	//Randomizer
+	}//Randomizer
 	public static void randomizer() {
 		Random rand = new Random();
 		randomvalue = rand.nextInt(2);
