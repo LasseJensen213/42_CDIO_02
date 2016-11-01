@@ -39,7 +39,7 @@ public class Game {
 
 		for(int i = 0; i<numOfPlayers;i++)
 		{
-			playerPos[i]=1;
+			playerPos[i]=0;
 		}
 
 		initBoard(pMan);
@@ -295,7 +295,7 @@ public class Game {
 		for(int i = 0; i<numOfPlayers;i++)
 		{
 			GUI.setCar(gotofield(start), pMan.get(i).getName());
-
+	
 		}
 
 	}
