@@ -23,11 +23,13 @@ public class Game {
 	int gotofield[] = {4,6,8,14,16,18,24,26,28,34,36,38};
 	int fieldEffect[] = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
 	DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
-
+	FieldGenerator fieldgenerator = new FieldGenerator();
+	
+	
+	
 	public void play() throws InterruptedException
 	{
 		//Lets go
-		int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
 		boolean noWinner = true;
 		int diceResult, fieldEffectInt;
 		int winnerNum = 0;
@@ -119,76 +121,77 @@ public class Game {
 
 	}
 
-
+	fieldgenerator.
 
 
 	//Creates the fields
-	protected void makeFields()
-	{
-		int fieldsInUse[] = {3,5,7,13,15,17,23,25,27,33,35,37};
-		Color[] bgColors = new Color[40];
-		for(int i = 0;i<40;i++){
-			bgColors[i] = Color.BLACK;
-			for(int r = 0;r<12;r++) 
-			{
-				if ( i==fieldsInUse[r]) 
-				{
-					bgColors[i] = Color.BLUE;
-				}		
-
-			}
-
-		}
-		String fieldeffects[] = {"","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
-		String[] fieldEffect = new String[40];
-		int NrReached = 0;
-		for(int i = 0;i<40;i++)
-		{
-			fieldEffect[i] = "";
-			for(int r = 0;r<12;r++) 
-			{
-				if ( i==fieldsInUse[r]) 
-				{
-					fieldEffect[i] = fieldeffects[NrReached];
-					NrReached++;		
-				}		
-
-			}
-
-		}
-
-		String[] fieldnames = new String[40];
-		int nrReached = 0;
-		for(int i = 0;i<40;i++){
-			fieldnames[i] = "";
-			for(int r = 0;r<12;r++) 
-			{
-				if ( i==fieldsInUse[r]) 
-				{
-					fieldnames[i]=Fields_StringBank.getFieldNames(nrReached);
-					nrReached++;
-				}		
-
-			}
-		}
-
-
-		Color fgColors[] = new Color[40];
-		for(int i = 0;i<40;i++) {
-			fgColors[i] = Color.YELLOW;
-		}
-
-		Field[] fields = new Field[nFields];
-
-		for (int i = 0; i<nFields;i++)
-		{
-			fields[i]= new Tax.Builder().setTitle(fieldnames[i]).setDescription(String.valueOf(fieldEffect[i])).
-					setSubText("").setBgColor(bgColors[i]).setFgColor(fgColors[i]).build();
-		}
-
-		GUI.create(fields);
-
-	}
+//	protected void makeFields()
+//	{
+//		int fieldsInUse[] = {3,5,7,13,15,17,23,25,27,33,35,37};
+//		Color[] bgColors = new Color[40];
+//		for(int i = 0;i<40;i++){
+//			bgColors[i] = Color.BLACK;
+//			for(int r = 0;r<12;r++) 
+//			{
+//				if ( i==fieldsInUse[r]) 
+//				{
+//					bgColors[i] = Color.BLUE;
+//				}		
+//
+//			}
+//
+//		}
+//		String fieldeffects[] = {"","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
+//		String[] fieldEffect = new String[40];
+//		int NrReached = 0;
+//		for(int i = 0;i<40;i++)
+//		{
+//			fieldEffect[i] = "";
+//			for(int r = 0;r<12;r++) 
+//			{
+//				if ( i==fieldsInUse[r]) 
+//				{
+//					fieldEffect[i] = fieldeffects[NrReached];
+//					NrReached++;		
+//				}		
+//
+//			}
+//
+//		}
+//
+//		String[] fieldnames = new String[40];
+//		int nrReached = 0;
+//		for(int i = 0;i<40;i++){
+//			fieldnames[i] = "";
+//			for(int r = 0;r<12;r++) 
+//			{
+//				if ( i==fieldsInUse[r]) 
+//				{
+//					fieldnames[i]=Fields_StringBank.getFieldNames(nrReached);
+//					nrReached++;
+//				}		
+//
+//			}
+//		}
+//						
+//
+//		Color fgColors[] = new Color[40];
+//		for(int i = 0;i<40;i++) {
+//			fgColors[i] = Color.YELLOW;
+//		}
+//
+//		Field[] fields = new Field[nFields];
+//
+//		for (int i = 0; i<nFields;i++)
+//		{
+//			fields[i]= new Tax.Builder().setTitle(fieldnames[i]).setDescription(String.valueOf(fieldEffect[i])).
+//					setSubText("a").setBgColor(bgColors[i]).setFgColor(fgColors[i]).build();
+//		}
+//
+//		GUI.create(fields);
+//		
+//
+//	}
 
 
 	/**
