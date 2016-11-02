@@ -30,21 +30,20 @@ public class Fields_StringBank {
 	private static String pit = "The Pit";
 	private static String goldmine = "Goldmine";
 	private static String start = "Start";
-//	int fieldEffect[] = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
 
 	//Fields description
-	private static String towerdescription = tower + "\n +250";
-	private static String craterdescription = crater +"\n -11"; 
-	private static String palaceGatesdescription = palaceGates + "\n +100";
-	private static String coldDesertdescription = coldDesert + "\n -20";
-	private static String walledCitydescription = walledCity + "\n +180";
-	private static String monasterydescription = monastery + "\n +0";
-	private static String blackCavedescription = blackCave + "\n -70";
-	private static String hutsdescription = huts + "\n +60";
-	private static String werewalldescription = werewall + "\n -80 \n + 1 turn";
-	private static String pitdescription = pit + "\n -50";
-	private static String goldminedescription = goldmine +"\n +650";
-	private static String startdescription = start + "\n Starting point";
+	private static String towerdescription = tower + ": Gain 250 coins.";
+	private static String craterdescription = crater +": Lose 100 coins."; 
+	private static String palaceGatesdescription = palaceGates + ": Gain 100 coins.";
+	private static String coldDesertdescription = coldDesert + ": Lose 20 coins.";
+	private static String walledCitydescription = walledCity + ": Gain 180 coins.";
+	private static String monasterydescription = monastery + ": Gain 0 coins.";
+	private static String blackCavedescription = blackCave + ": Lose -70 coins.";
+	private static String hutsdescription = huts + ": Gain 60 coins.";
+	private static String werewalldescription = werewall + ": Lose 80 coins but gain 1 turn.";
+	private static String pitdescription = pit + ": Lose 50 coins.";
+	private static String goldminedescription = goldmine +": Gain 650 coins.";
+	private static String startdescription = "Starting point.";
 	
 	
 	

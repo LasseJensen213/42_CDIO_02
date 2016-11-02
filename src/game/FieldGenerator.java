@@ -7,7 +7,7 @@ import desktop_fields.Tax;
 import desktop_resources.GUI;
 import stringBanks.Fields_StringBank;
 
-public class FieldGenerator extends Game {
+public class FieldGenerator{
 
 	//Information regarding the fields:
 	private int fieldsInUse[] = {3,5,7,13,15,17,23,25,27,33,35,37};
@@ -100,7 +100,7 @@ public class FieldGenerator extends Game {
 			{
 				if ( i==fieldsInUse[r]) 
 				{
-					fieldEffect[i] = Fields_StringBank.getFieldDescriptions(NrReached);
+					fielddescriptions[i] = Fields_StringBank.getFieldDescriptions(NrReached);
 					NrReached++;		
 				}		
 
@@ -108,17 +108,14 @@ public class FieldGenerator extends Game {
 
 		}
 	}
-	
-	public void initDescriptionText()
-	{
-		for(int i = 1;i<=40;i++)
-		{
-			GUI.setDescriptionText(i,fielddescriptions[i-1]);
-		}
-	}
 
-	public void makefields() 
+	public void makeFields() 
 	{
+		initbgColors();
+		initfgColors();
+		initfieldnames();
+		initfieldeffect();
+		initfielddescription();
 		Field[] fields = new Field[nFields];
 
 		for (int i = 0; i<nFields;i++)
@@ -128,7 +125,7 @@ public class FieldGenerator extends Game {
 		}
 		GUI.create(fields);
 	}
-	
-	
-	
+
+
+
 }
