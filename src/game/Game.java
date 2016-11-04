@@ -1,8 +1,10 @@
 package game;
 
+import java.awt.Color;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import desktop_codebehind.Car;
 import desktop_resources.*;
 import stringBanks.Fields_StringBank;
 import stringBanks.Game_StringBank;
@@ -156,11 +158,14 @@ public class Game {
 	{
 		//Start position:
 		int start = 0;
-
+		Car car0 = new Car.Builder().primaryColor(Color.red).build();
+		Car car1 = new Car.Builder().primaryColor(Color.BLUE).build();
+		
+		Car[] carArr = {car0, car1};
 		//Add the players on the board
 		for(int i = 0 ; i<numOfPlayers;i++)
 		{
-			GUI.addPlayer(pMan.get(i).getName(), pMan.get(i).accessAccount().getBalance());
+			GUI.addPlayer(pMan.get(i).getName(), pMan.get(i).accessAccount().getBalance(),carArr[i]);
 		}
 
 		for(int i = 0; i<numOfPlayers;i++)

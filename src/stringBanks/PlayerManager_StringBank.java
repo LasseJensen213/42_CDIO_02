@@ -17,6 +17,8 @@ public class PlayerManager_StringBank {
 	//Invalid character choice
 	private static String invalidchar = "Invalid character choice. \n\t Pleace enter your choice of character.";
 	
+	private static String nameTooLong = "Sorry, but the name is too long, it can max be 16 chars";
+	
 	
 	
 	
@@ -43,5 +45,10 @@ public class PlayerManager_StringBank {
 	public static String getGenericPlayer()
 	{
 		return genericPlayerName;
+	}
+	
+	public static String getNameTooLong()
+	{
+		return nameTooLong;
 	}
 }

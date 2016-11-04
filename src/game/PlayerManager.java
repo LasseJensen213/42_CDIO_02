@@ -60,6 +60,10 @@ public class PlayerManager {
 						{
 							GUI.showMessage(PlayerManager_StringBank.getNameTaken());
 						}
+						else if(input.length()>16)
+						{
+							GUI.showMessage(PlayerManager_StringBank.getNameTooLong());
+						}
 						else
 						{
 							playerArr[i]=new Player(input,charNum);
