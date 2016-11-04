@@ -28,6 +28,8 @@ public class Game_StringBank
 	
 	private static String[] confirmMsg = {confirmMessage,confirm_yes,confirm_no};
 	
+	private static String skipMessage = "Skip message - need updating";
+	
 	
 	/**
 	 * 
@@ -64,7 +66,10 @@ public class Game_StringBank
 	}
 
 	
-	
+	public static String getSkipMessage()
+	{
+		return skipMessage;
+	}
 
 	
 	

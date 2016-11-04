@@ -73,7 +73,7 @@ public class Game {
 					pMan.get(turn).accessAccount().withdraw(-fieldEffectInt);
 					if(pMan.get(turn).accessAccount().getBalance()==0)
 					{
-						GUI.showMessage("NEED_SKIP_TURN_MESSAGE_HERE");
+						GUI.showMessage(Game_StringBank.getSkipMessage());
 						pMan.get(turn).accessAccount().deposit(100);
 						pMan.get(turn).setSkipTurn(true);
 
@@ -104,7 +104,7 @@ public class Game {
 
 				//Change turn unless the player lands on werewall
 
-				turn =(turn+(playerPos[turn]==gotofield[9]?0:1))%numOfPlayers;
+				turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
 
 
 			}
@@ -200,7 +200,7 @@ public class Game {
 		int x2 = x1+rand.nextInt(7)-3;
 		int y2 = y1+rand.nextInt(5)-2;
 		
-		int rotation1 = rand.nextInt(360);
+		int rotation1 = rand.nextInt(360);	
 		int rotation2 = rand.nextInt(360);
 		int faceValue1 = rand.nextInt(6)+1;
 		int faceValue2 = rand.nextInt(6)+1;
