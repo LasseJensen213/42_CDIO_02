@@ -31,8 +31,25 @@ public class Fields_StringBank {
 	private static String goldmine = "Goldmine";
 	private static String start = "Start";
 
+	//Fields description
+	private static String towerdescription = tower + ": Gain 250 coins.";
+	private static String craterdescription = crater +": Lose 100 coins."; 
+	private static String palaceGatesdescription = palaceGates + ": Gain 100 coins.";
+	private static String coldDesertdescription = coldDesert + ": Lose 20 coins.";
+	private static String walledCitydescription = walledCity + ": Gain 180 coins.";
+	private static String monasterydescription = monastery + ": Gain 0 coins.";
+	private static String blackCavedescription = blackCave + ": Lose -70 coins.";
+	private static String hutsdescription = huts + ": Gain 60 coins.";
+	private static String werewalldescription = werewall + ": Lose 80 coins but gain 1 turn.";
+	private static String pitdescription = pit + ": Lose 50 coins.";
+	private static String goldminedescription = goldmine +": Gain 650 coins.";
+	private static String startdescription = "Starting point.";
+	
+	
+	
 	//Randomizer value
 	private static int randomvalue = 0;
+	
 	
 	///Board Messages
 	///for Wizard
@@ -431,8 +448,10 @@ public class Fields_StringBank {
 	
 	private static String[] fieldNames = {start,tower,crater,palaceGates,coldDesert,walledCity,monastery,blackCave,huts,werewall,pit,goldmine};
 	
+	///String array for Field descriptions
+	private static String[] fieldDescriptions = {startdescription, towerdescription, craterdescription,palaceGatesdescription,coldDesertdescription,walledCitydescription,monasterydescription,blackCavedescription,hutsdescription,werewalldescription,pitdescription,goldminedescription};
 	
-
+	
 	
 	public static String getFieldNames(int i)
 	{
@@ -447,7 +466,16 @@ public class Fields_StringBank {
 	{
 		return menu;
 
-	}//Randomizer
+	}
+	
+	public static String getFieldDescriptions(int i) 
+	{
+		return fieldDescriptions[i];
+	}
+		
+	
+	
+	//Randomizer
 	public static void randomizer() {
 		Random rand = new Random();
 		randomvalue = rand.nextInt(2);

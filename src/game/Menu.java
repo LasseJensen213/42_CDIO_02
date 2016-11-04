@@ -4,6 +4,7 @@ package game;
 
 import desktop_resources.GUI;
 import stringBanks.Fields_StringBank;
+import stringBanks.Menu_StringBank;
 
 public class Menu {
 
@@ -12,7 +13,8 @@ public class Menu {
 
 		
 		Game game = new Game();
-		game.makeFields();
+		FieldGenerator fieldgenerator = new FieldGenerator();
+		fieldgenerator.makeFields();
 		String[] menu = Fields_StringBank.menu();
 		while(true)
 		{
@@ -23,7 +25,7 @@ public class Menu {
 			}
 			else if(input.equals(menu[1]))
 			{
-				GUI.showMessage("INFO_STRING");
+				GUI.showMessage(Menu_StringBank.getHelp());
 			}
 			else
 			{
