@@ -28,7 +28,7 @@ public class Game_StringBank
 	
 	private static String[] confirmMsg = {confirmMessage,confirm_yes,confirm_no};
 	
-	private static String skipMessage = "Skip message - need updating";
+	private static String skipMessage = "You lost your turn and gained 100 coins";
 	
 	
 	/**
