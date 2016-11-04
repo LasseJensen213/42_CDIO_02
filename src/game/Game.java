@@ -1,10 +1,8 @@
 package game;
 
-import java.awt.Color;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import desktop_fields.*;
 import desktop_resources.*;
 import stringBanks.Fields_StringBank;
 import stringBanks.Game_StringBank;
@@ -15,7 +13,6 @@ public class Game {
 	private int numOfPlayers = 2;
 	private int numOfDice = 2;
 	private int numOfDiceSides = 6;
-	private int nFields = 40;
 	private int turn = 0;
 	private int wait = 400;
 	//Remembers the location of the players.
@@ -23,11 +20,13 @@ public class Game {
 	int gotofield[] = {4,6,8,14,16,18,24,26,28,34,36,38};
 	int fieldEffect[] = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
 	DiceManager diceCup = new DiceManager(numOfDice,numOfDiceSides);
-
+	
+	
+	
+	
 	public void play() throws InterruptedException
 	{
 		//Lets go
-		int[] fieldEffect = {0,250,-100,100,-20,180,0,-70,60,-80,-50,650};
 		boolean noWinner = true;
 		int diceResult, fieldEffectInt;
 		int winnerNum = 0;
@@ -74,7 +73,7 @@ public class Game {
 					pMan.get(turn).accessAccount().withdraw(-fieldEffectInt);
 					if(pMan.get(turn).accessAccount().getBalance()==0)
 					{
-						GUI.showMessage("NEED_SKIP_TURN_MESSAGE_HERE");
+						GUI.showMessage(Game_StringBank.getSkipMessage());
 						pMan.get(turn).accessAccount().deposit(100);
 						pMan.get(turn).setSkipTurn(true);
 
@@ -105,7 +104,7 @@ public class Game {
 
 				//Change turn unless the player lands on werewall
 
-				turn =(turn+(playerPos[turn]==gotofield[9]?0:1))%numOfPlayers;
+				turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
 
 
 			}
@@ -118,78 +117,6 @@ public class Game {
 		GUI.close();
 
 	}
-
-
-
-
-	//Creates the fields
-	protected void makeFields()
-	{
-		int fieldsInUse[] = {3,5,7,13,15,17,23,25,27,33,35,37};
-		Color[] bgColors = new Color[40];
-		for(int i = 0;i<40;i++){
-			bgColors[i] = Color.BLACK;
-			for(int r = 0;r<12;r++) 
-			{
-				if ( i==fieldsInUse[r]) 
-				{
-					bgColors[i] = Color.BLUE;
-				}		
-
-			}
-
-		}
-		String fieldeffects[] = {"","+250","-100","+100","-20","+180","0","-70","+60","-80","-50","+650"};
-		String[] fieldEffect = new String[40];
-		int NrReached = 0;
-		for(int i = 0;i<40;i++)
-		{
-			fieldEffect[i] = "";
-			for(int r = 0;r<12;r++) 
-			{
-				if ( i==fieldsInUse[r]) 
-				{
-					fieldEffect[i] = fieldeffects[NrReached];
-					NrReached++;		
-				}		
-
-			}
-
-		}
-
-		String[] fieldnames = new String[40];
-		int nrReached = 0;
-		for(int i = 0;i<40;i++){
-			fieldnames[i] = "";
-			for(int r = 0;r<12;r++) 
-			{
-				if ( i==fieldsInUse[r]) 
-				{
-					fieldnames[i]=Fields_StringBank.getFieldNames(nrReached);
-					nrReached++;
-				}		
-
-			}
-		}
-
-
-		Color fgColors[] = new Color[40];
-		for(int i = 0;i<40;i++) {
-			fgColors[i] = Color.YELLOW;
-		}
-
-		Field[] fields = new Field[nFields];
-
-		for (int i = 0; i<nFields;i++)
-		{
-			fields[i]= new Tax.Builder().setTitle(fieldnames[i]).setDescription(String.valueOf(fieldEffect[i])).
-					setSubText("").setBgColor(bgColors[i]).setFgColor(fgColors[i]).build();
-		}
-
-		GUI.create(fields);
-
-	}
-
 
 	/**
 	 * @return
@@ -224,8 +151,6 @@ public class Game {
 		}
 
 	}
-
-	
 
 	private void initBoard(PlayerManager pMan)
 	{
@@ -275,7 +200,7 @@ public class Game {
 		int x2 = x1+rand.nextInt(7)-3;
 		int y2 = y1+rand.nextInt(5)-2;
 		
-		int rotation1 = rand.nextInt(360);
+		int rotation1 = rand.nextInt(360);	
 		int rotation2 = rand.nextInt(360);
 		int faceValue1 = rand.nextInt(6)+1;
 		int faceValue2 = rand.nextInt(6)+1;
@@ -308,8 +233,6 @@ public class Game {
 		GUI.showMessage(msg[0]+pMan.get(winnerNum).getName()+
 				msg[1]+pMan.get(winnerNum).accessAccount().getBalance()+msg[2]);
 	}
-
-	
 
 	private void updatePlayerPos(int diceResult, PlayerManager pMan) throws InterruptedException
 	{
