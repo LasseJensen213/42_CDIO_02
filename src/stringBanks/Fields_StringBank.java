@@ -1,6 +1,5 @@
 package stringBanks;
 
-import java.awt.Color;
 import java.util.Random;
 
 public class Fields_StringBank {
