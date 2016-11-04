@@ -105,7 +105,7 @@ public class Game {
 
 				//Change turn unless the player lands on werewall
 
-				turn =(turn+(playerPos[turn]==gotofield[9]?0:1))%numOfPlayers;
+				turn =(turn+(playerPos[turn]==9?0:1))%numOfPlayers;
 
 
 			}
